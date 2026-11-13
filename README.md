@@ -18,10 +18,12 @@ Scene images are backgrounds/art only: dialogue, quest text, labels, buttons, an
 |---|---|---|
 | `assets/region/kanto-pallet-town.jpg` | Existing `/region` map source | Unchanged source; rework later in place |
 | `assets/town/ash-home.jpg` | Ash’s Home scene | Draft; one home location |
-| `assets/town/oak-corral.jpg` | Oak’s Corral/Pasture | Draft |
-| `assets/people/delia.jpg` | Delia NPC portrait | Draft |
-| `assets/story/pallet-lab-revisit.jpg` | Oak in the lab on revisits | Draft |
-| `assets/story/pallet-starter-choice-4.jpg` | Oak’s lab with four starter options | Draft; matches current four choices |
+| `assets/town/oak-corral.jpg` | Oak’s Corral/Pasture | Used by the Pallet Town scene |
+| `assets/town/rival-house.jpg` | Rival’s House scene | Used by the Pallet Town scene |
+| `assets/people/delia.jpg` | Delia NPC portrait | Used by Ash’s Home |
+| `assets/story/pallet-lab-revisit.jpg` | Oak in the lab on revisits | Used by the Pallet Town scene |
+| `assets/story/pallet-starter-choice-4.jpg` | Oak’s lab with four starter options | Used by `/start`; matches current four choices |
+| `assets/town/ash-home.jpg` | Ash’s Home scene | Used by Ash’s Home |
 | `assets/drafts/town/pallet-home-alternative.jpg` | Earlier home interior alternate | Archive/draft; not a second building |
 
 The public raw asset base URL is `https://raw.githubusercontent.com/TheSunphis/kanto-assets/main/assets`.
