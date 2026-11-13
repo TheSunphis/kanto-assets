@@ -3,8 +3,7 @@
 Mt. Moon for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style, built to stand as its own
 **Extra** — a non-town special place with its own folder, the way Sea Cottage does.
 
-**9 of ~40 — batch 1: the cave.** The tenth image of the batch was rejected (see *Rejected* below) and is
-held over. Everything here is staged for review; nothing is installed.
+**19 of ~34 — batches 1 and 2: the cave and its people.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -61,6 +60,7 @@ Battle fields: `card.FIELDS` has **no cave key at all** — every trainer in her
 | `ex` | Route 4 Exit | `town/mt-moon-exit` | Daylight, and a stair down to the grass. |
 | `cr` | The Moon Shaft | `town/mt-moon-crater` | Moonlight falls all the way to the bottom of the mountain. |
 | `cy` | Crystal Chamber | `town/mt-moon-crystals` | The crystals light the water better than a lantern would. |
+| `sm` | The Researcher | `people/seymour` | A researcher counting something on his fingers. |
 
 ---
 
@@ -78,17 +78,40 @@ Battle fields: `card.FIELDS` has **no cave key at all** — every trainer in her
 | `town/mt-moon-crater.jpg` | `cr` | The moon shaft: tiered rock ledges rising to a jagged hole, one huge beam of moonlight striking a flat slab ringed by standing stones | 267 KB |
 | `town/mt-moon-crystals.jpg` | `cy` | A crystal chamber: sharp teal formations at every angle, a still reflecting pool, the crystals lighting the ceiling themselves | 548 KB |
 
-### Rejected
+### Batch 2 — the cave's mouth, and nine people
 
-`town/mt-moon.jpg` came back as a **top-down map with tiled maze walls** — the wrong register entirely, and
-the one filename the installed set already uses. Regenerating it first in batch 2.
+`town/mt-moon.jpg` was regenerated as a **scene** rather than a map and is now the third-floor main chamber:
+dirt floor, boulders, two ladders on the ledges, a broken crate, one moonbeam from a hole in the ceiling.
+
+The six people already installed in `assets/mt-moon/people/` were **1280 × 796 scene images** with a drawn cave
+behind each figure. All six are redrawn here to the real spec — single figure, cream, 726 px, bottom-flush.
+
+| File | Key | Design | Weight |
+|---|---|---|---|
+| `people/bug-catcher-kent.jpg` | `bug-catcher-kent` | A **boy of twelve**, child proportions: straw sun hat, short yellow tee, blue shorts, butterfly net over one shoulder, looking nervous | 136 KB |
+| `people/lass-iris.jpg` | `lass-iris` | A **girl of twelve**: pigtails with red ribbons, pale green dress over a white blouse, hands clasped, looking up hopefully | 98 KB |
+| `people/super-nerd-jovan.jpg` | `super-nerd-jovan` | A **teenager of sixteen**: lanky, bowl cut, round glasses, white shirt buttoned to the collar, notebook open mid-note | 84 KB |
+| `people/super-nerd-miguel.jpg` | `super-nerd-miguel` | A **teenager of seventeen**: curly hair, thick glasses, lab coat over a green shirt, both arms spread wide to block the way | 114 KB |
+| `people/hiker-marcos.jpg` | `hiker-marcos` | A **man of forty**: burly, bushy beard, knitted beanie, red-and-black flannel, loaded backpack with a bedroll | 140 KB |
+| `people/moon-rocket.jpg` | `moon-rocket` | **Man in Black**, adult: black peaked cap and uniform, plain red circle emblem, torch on the belt, arms folded, smug | 83 KB |
+| `people/seymour.jpg` | `seymour` **new** | **Man of forty-five**, the Clefairy researcher: thinning hair, wire glasses, lab coat over a green field shirt, satchel strap, notebook and pencil | 123 KB |
+| `people/rocket-scout.jpg` | `rocket-scout` **new** | **Woman of twenty-eight**, adult: lean and alert, dark hair through the back of a black cap, plain red circle emblem, coiled rope, hand raised to peer into the dark | 83 KB |
+| `people/fossil-maniac.jpg` | `fossil-maniac` **new** | **Man of sixty-five**, elderly: weathered face, white moustache, goggles pushed up onto his forehead, patched canvas coat, satchel, rock hammer | 134 KB |
+
+**Wiring for the three new people** — each needs a `Person(...)` in `people.py` and a line in `PORTRAITS`:
+
+```python
+"seymour": "mt-moon", "rocket-scout": "mt-moon", "fossil-maniac": "mt-moon",
+```
+
+`seymour` and `fossil-maniac` are dialogue characters, not trainers — no `trainers.py` entry. `rocket-scout` is a
+second body for the cave's Rocket presence; if she should fight, she needs a `Trainer(...)` in `trainers.py` on the
+new `mt-moon` location, otherwise she is a `Person` only.
 
 ### Note on the art already in `assets/mt-moon/`
 
-All six portraits there are **1280 × 796 scene images** — each figure standing in a drawn cave with a ladder,
-a stream and glowing crystals behind them — not 1376 × 768 cream-background portraits. The two town scenes are
-the cave exterior and the fossil shelf at 1280 × 796 as well. They read beautifully but none of them matches the
-portrait spec, so batch 2 redraws the six people properly rather than layering new portraits beside them.
+The two installed town scenes are 1280 × 796 as well. `town/mt-moon-fossils` is standing in for the fossil
+chamber in this set until batch 3 replaces it with a 1408 × 768 version; `town/mt-moon` is already replaced here.
 
 ---
 
@@ -96,9 +119,8 @@ portrait spec, so batch 2 redraws the six people properly rather than layering n
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | `mt-moon` place scene, then the six existing people redrawn as spec portraits, plus Seymour the Clefairy researcher, a second Rocket, a fossil maniac and a Clefairy watcher | ~10 |
-| 3 | Story beats — the fossil choice, the Man in Black, the moonlit shaft — and two cave battle fields | ~8 |
-| 4 | Area maps of each floor, the region views with the ring on the mountain, the labelled reference | ~10 |
+| 3 | A redrawn `mt-moon-fossils`, the Clefairy watcher portrait, story beats — the fossil choice, the Man in Black at the shelf, the moonlit shaft — and two cave battle fields for the new `card.FIELDS` keys | ~8 |
+| 4 | Area maps of each floor under `routeinfo/`, both region views with the ring on the mountain, the labelled reference | ~7 |
 
 ---
 
@@ -107,3 +129,4 @@ portrait spec, so batch 2 redraws the six people properly rather than layering n
 | File | What |
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the nine cave scenes |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the nine portraits |
