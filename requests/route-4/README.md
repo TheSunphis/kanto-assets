@@ -2,7 +2,7 @@
 
 Route 4 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**20 of ~30 — batches 1 and 2: the road and its people.** Everything here is staged for review; nothing is installed.
+**28 of ~33 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -102,6 +102,30 @@ entries if they are meant to battle — the salesman, both tutors, the girl and 
 The salesman also needs an item hook: ₽500 for a Magikarp, with **no refund** — that is the joke and it should
 survive into the code.
 
+### Batch 3 — story beats (8) and the two battlefields
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/route-4-magikarp-sale.jpg` | ₽500, no refunds | Inside the Center: the man in the trench coat leaning over the counter, one hand raised flat as if swearing an oath, sliding a cloth-wrapped bundle across; a trainer's back, cap and open purse in the foreground | 354 KB |
+| `story/route-4-boulder.jpg` | The boulder that isn't | A smooth grey boulder as tall as a child in the grass, a very small girl in a yellow sundress leaning forward to point at it | 455 KB |
+| `story/route-4-ledge-jump.jpg` | The drop | A trainer caught in mid-air below a stone lip, knees bent, straps flying, dust bursting where they are about to land and pebbles still falling | 387 KB |
+| `story/route-4-tutors-demo.jpg` | Two ways to hit | The swept yard: one old master driving his fist into a rope-wrapped post with splinters flying, the other holding a high kick against the second post | 741 KB |
+| `story/route-4-hill-lass.jpg` | The highest hill | A girl on a flat boulder at the crest, hand shading her eyes, the whole teal basin and its bridges below her | 841 KB |
+| `story/route-4-center-night.jpg` | The only warm roof | The Center at night, walls washed moon-blue, yellow light on the path, a bicycle against the wall, one small figure hesitating at the door | 478 KB |
+| `story/route-4-east-view.jpg` | Down into the city | Two stone gateposts framing the road, a blank milestone, and two travellers already ahead of us walking into the morning haze over the rooftops | 484 KB |
+| `story/route-4-cave-return.jpg` | Out | Stepping out of the cave with an arm up against the glare, the trail and its ledges falling away below, the interior still a blue-black void behind | 625 KB |
+
+**Battlefields.** The route currently shares the joined road's backdrop at `kanto-route-3-mt-moon-and-route-4`, which is
+outdoor route art for a road that is really two different places. Splitting it:
+
+| File | Proposed field key | Shows | Weight |
+|---|---|---|---|
+| `battle/bg/kanto-route-4-west.jpg` | `kanto-route-4-west` | The climb: plain dirt track, low rock shelves either side, big boulders at the edges, fence post and wire, the crags and cave mouth behind | 349 KB |
+| `battle/bg/kanto-route-4-east.jpg` | `kanto-route-4-east` | The terrace above the valley: open gold grass, a lip of grey stone at the far edge, the teal river basin and the city in haze beyond | 490 KB |
+
+Anchors for both: `(976, 392)` far — `(458, 648)` near, scale `1.0`. If only one key is wanted, use the **east** one —
+that is where the trainers are, and the west half is mountain climbing rather than battling.
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -125,8 +149,7 @@ survive into the code.
 
 | Batch | Contents | Count |
 |---|---|---|
-| 3 | Story beats — the ₽500 sale, the boulder that isn't, the ledge jump, the tutors' demonstration, the hilltop Lass — plus the `kanto-route-4` battle fields, west and east | ~8 |
-| 4 | Route maps (overview, west, east), both region views ringed, the labelled reference | ~6 |
+| 4 | Route maps (overview, west, east), both region views ringed, the labelled reference | ~5 |
 
 ---
 
@@ -136,3 +159,4 @@ survive into the code.
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
