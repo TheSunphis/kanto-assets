@@ -130,12 +130,16 @@ The child trainers are deliberately small next to `bike-owner`, `cerulean-guide`
 
 ### Story beats — 4, banked until `Quest` grows a picture field
 
-1408 × 768, 64 colours, no characters in the two bridge pieces beyond the figures named (Pokémon are drawn by `card.py` at runtime):
+> **The content rule is absolute here: no people and no Pokémon in any scene.** Every character in the bot's scenes is a **portrait sprite** that `card.py` draws at runtime on top of the art — so a figure baked into the background would double up with the portrait, or appear in a beat where no such character is present. These four were generated and inspected empty of figures, and the two bridge pieces **originally shipped with trainers in them and were regenerated from scratch, empty.**
+>
+> The beat has to read from the *place* alone: the barricade says "blocked", the long empty span says "a run to make", not a painted crowd.
+
+1408 × 768, 64 colours, no people, no creatures — backdrops only:
 
 | File | Beat | Shows | Weight |
 |---|---|---|---|
-| `story/nugget-bridge-gauntlet.jpg` | The five in a row | Five young trainers staged at intervals up the length of the arched timber footbridge, all facing the near end — the gauntlet, read as a shape | 769 KB |
-| `story/nugget-bridge-rocket.jpg` | The Rocket at the far end | A lone Rocket in black, arms folded square across the deck at sunset, red circle emblem, plainly blocking the way off | 702 KB |
+| `story/nugget-bridge-gauntlet.jpg` | The run | The arched timber footbridge seen from the near end, empty end to end, flower boxes and bright canal either side, the far shore's rooftops beyond — the span the five are strung along, waiting for the sprites | 515 KB |
+| `story/nugget-bridge-rocket.jpg` | The far end, closed off | Sunset over the deck with a makeshift roadblock across the far end — stacked crates, dark luggage and two striped sawhorses — the way off the bridge shut. No figure: the Rocket is the portrait sprite | 549 KB |
 | `story/cerulean-gym-pool.jpg` | The arena before Misty | Tiled deck, vast turquoise pool, rafts and a diving board, glass tank walls, empty spectator benches | 689 KB |
 | `story/bill-cottage-machine.jpg` | Bill's machine | The humming glass-cored cylinder, cables across the floorboards, a desk of monitors showing only abstract glow, night sea in the round window | 497 KB |
 
