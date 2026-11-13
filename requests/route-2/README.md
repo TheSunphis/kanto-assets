@@ -1,10 +1,10 @@
 # Route 2 — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 20 runtime images installed to `assets/route-2/`; review sheets remain here.
 The Route 2 road for PokéBot, in the **Pokémon Fire Ash** style.
 
 **20 images — the road is complete.** 5 place scenes, 3 battlefields, 3 portraits, 4 area maps, 4 story beats, 1 ringed region map. Nothing borrowed from Pika. Viridian Forest has its own set: **[`requests/viridian-forest/`](../viridian-forest/)**.
 
-**Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
 
 ---
 
@@ -97,9 +97,9 @@ The one registered key plus two location-unique variants:
 
 ---
 
-## Install — proposal only, nothing applied yet (`assets/<location>/` layout)
+## Install — completed (2026-11-11)
 
-`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. This set installs to `assets/route-2/` — which today holds the older route-2 map art and its `ATTRIBUTION.md`, alongside `town/` and `routeinfo/`.
+`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. The request art is installed to `assets/route-2/`; older location-specific map files and attribution remain alongside it.
 
 | From here | To |
 |---|---|

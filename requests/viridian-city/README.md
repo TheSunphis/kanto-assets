@@ -1,9 +1,9 @@
 # Viridian City — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 23 runtime images installed to `assets/viridian-city/`; the labeled reference remains here.
 Viridian City for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
 **24 of 24 — the set is complete.**
-Everything here is staged for review; nothing has been installed into the live asset folders.
 
 ---
 

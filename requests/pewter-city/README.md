@@ -1,8 +1,9 @@
 # Pewter City — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 37 runtime images installed to `assets/pewter-city/`; review sheets and the labeled reference remain here.
 Pewter City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**37 of 37 — the set is complete.** 13 town scenes, the gym battlefield, 7 portraits, 11 story beats, 4 area maps, 1 ringed region map and a labelled reference. Nothing is installed; every file stays in `requests/`.
+**37 of 37 — the set is complete.** 13 town scenes, the gym battlefield, 7 portraits, 11 story beats, 4 area maps, 1 ringed region map and a labelled reference.
 
 ---
 
@@ -197,9 +198,9 @@ Everything in `requests/pewter-city/`:
 
 ---
 
-## Install — proposal only, nothing applied yet
+## Install — completed (2026-11-11)
 
-Per the current rule this set stays in `requests/`. When it does get installed, the layout is `assets/<location>/<category>/<file>`, so these go to `assets/pewter-city/town/`, portraits to `assets/pewter-city/people/`, and the gym battlefield to `assets/pewter-city/battle/bg/pewter-gym.jpg`.
+The set is installed. Its layout is `assets/<location>/<category>/<file>`, so these go to `assets/pewter-city/town/`, portraits to `assets/pewter-city/people/`, and the gym battlefield to `assets/pewter-city/battle/bg/pewter-gym.jpg`.
 
 Two code facts worth knowing before that day:
 

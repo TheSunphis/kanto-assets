@@ -1,8 +1,9 @@
 # Cerulean City — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 40 runtime images installed to `assets/cerulean-city/`; review sheets and the labeled reference remain here.
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**40 of 40 — the set is complete.** 11 town scenes, 2 battlefields, 15 portraits, 6 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
+**40 of 40 — the set is complete.** 11 town scenes, 2 battlefields, 15 portraits, 6 story beats, 4 area maps, 2 region views.
 
 ---
 
@@ -209,9 +210,9 @@ What fixed it: saying the shape out loud as **round and flat**, and naming the f
 
 ---
 
-## Install — proposal only, nothing applied yet
+## Install — completed (2026-11-11)
 
-This set stays in `requests/`. Under `assets/<location>/<category>/<file>` it would go to `assets/cerulean-city/town/`, portraits to `assets/cerulean-city/people/`, story to `assets/cerulean-city/story/`, area maps to `assets/cerulean-city/region-maps/`, region views to `assets/cerulean-city/region/`, and the two battlefields to `assets/cerulean-city/battle/bg/cerulean-gym.jpg` and `.../battle/bg/nugget-bridge.jpg` — battle art being location-unique, per [`BATTLE_ART.md`](../BATTLE_ART.md).
+Installed from `requests/` to `assets/<location>/<category>/<file>`; review-only files remain in `requests/`. The runtime paths are `assets/cerulean-city/town/`, portraits to `assets/cerulean-city/people/`, story to `assets/cerulean-city/story/`, area maps to `assets/cerulean-city/region-maps/`, region views to `assets/cerulean-city/region/`, and the two battlefields to `assets/cerulean-city/battle/bg/cerulean-gym.jpg` and `.../battle/bg/nugget-bridge.jpg` — battle art being location-unique, per [`BATTLE_ART.md`](../BATTLE_ART.md).
 
 `assets/cerulean-city/region/` already holds a `kanto-cerulean-city.jpg` and a `kanto-map-cerulean-city.jpg` of its own; the two here are meant to replace that pair so the ring sits at the canal city and matches the area maps.
 

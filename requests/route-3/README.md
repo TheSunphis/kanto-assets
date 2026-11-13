@@ -1,8 +1,9 @@
 # Route 3 — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 36 runtime images installed to `assets/route-3/`; the labeled reference remains here.
 Kanto Route 3 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**36 assets** requested. Everything here is staged for review; nothing has been installed into the live asset folders yet.
+**36 assets** requested.
 
 ---
 
@@ -103,18 +104,15 @@ Marked crops of `route-3.jpg`. Consumed by `_route_map_asset()` once area marker
 
 ## Where each file goes
 
-The bot fetches these over HTTP, so they must land in the asset repository, not the bot repository.
+All request art is installed in `TheSunphis/kanto-assets` under the location-scoped layout; no shared Pika artwork is used.
 
 | Group | Destination |
 |---|---|
-| Scenes, region maps | `TheSunphis/Pika` → `assets/town/` |
-| Portraits | `TheSunphis/Pika` → `assets/people/` |
-| Battlefields | `TheSunphis/Pika` → `assets/battle/bg/` |
-| `/routeinfo` backdrop | `TheSunphis/Pika` → `assets/routeinfo/` |
-
-`bot/config.py` resolves `asset()` against `ASSETS_URL` = `https://raw.githubusercontent.com/TheSunphis/Pika/main/assets` and `kanto_asset()` against the Kanto repo. Any file that belongs in the Kanto repo should be moved under its `assets/` tree before release.
-
----
+| Scenes | `assets/route-3/town/` |
+| Portraits | `assets/route-3/people/` |
+| Battlefields | `assets/route-3/battle/bg/` |
+| Area maps | `assets/route-3/region-maps/` |
+| `/routeinfo` backdrop | `assets/route-3/routeinfo/` |
 
 ## Code changes these assets expect
 

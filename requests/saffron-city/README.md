@@ -1,8 +1,9 @@
 # Saffron City — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 40 runtime images installed to `assets/saffron-city/`; review sheets and the labeled reference remain here.
 Saffron City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**40 of 40 — the set is complete.** 10 town scenes, 18 portraits, 2 battlefields, 4 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
+**40 of 40 — the set is complete.** 10 town scenes, 18 portraits, 2 battlefields, 4 story beats, 4 area maps, 2 region views.
 
 ---
 
@@ -202,7 +203,7 @@ The ten portraits need their own entries in `people.PEOPLE`, plus a line each in
 
 ---
 
-## Install — proposal only, nothing applied yet
+## Install — completed (2026-11-11)
 
 Under `assets/<location>/<category>/<file>`: town scenes to `assets/saffron-city/town/`, portraits to `people/`, both battlefields to `battle/bg/`, story beats to `story/`, area maps to `region-maps/`, and the region view to `region/`.
 

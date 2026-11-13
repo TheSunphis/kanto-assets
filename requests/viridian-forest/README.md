@@ -1,10 +1,10 @@
 # Viridian Forest — asset request (Kanto)
 
+**Installation complete (2026-11-11):** 22 runtime images installed to `assets/viridian-forest/`; review sheets and the labeled reference remain here.
 Viridian Forest for PokéBot, in the **Pokémon Fire Ash** style.
 
-**23 of 23 — the set is complete.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
+**23 of 23 — the set is complete.** It remains the Viridian Forest area shown under Kanto Region Extras; the road has its own set: **[`requests/route-2/`](../route-2/)**.
 
-**Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
 
 ---
 
@@ -140,18 +140,18 @@ The labelled reference is built **in code**, never generated: the three area map
 
 ---
 
-## Install — proposal only, nothing applied yet (`assets/<location>/` layout)
+## Install — completed (2026-11-11)
 
-`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. So this set installs to `assets/viridian-forest/`:
+`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. This set is installed to `assets/viridian-forest/`:
 
 | From here | To | Runtime key it serves |
 |---|---|---|
 | `town/*.jpg` | `assets/viridian-forest/town/` | `town/viridian-forest`, `town/viridian-forest-entrance`, `town/viridian-forest-maze`, `town/viridian-forest-cache` |
 | `people/*.jpg` | `assets/viridian-forest/people/` | the four Bug Catcher portrait keys |
 | `story/*.jpg` | `assets/viridian-forest/story/` | the eight story beats |
-| `region/*.jpg` | `assets/viridian-forest/region/` | the ringed overview — rename to **`kanto-map-viridian-forest.jpg`** if the forest becomes a place, matching `assets/celadon-city/region/kanto-map-celadon-city.jpg` |
-| `region-maps/*.jpg` | `assets/viridian-forest/region/` | the four area maps, review-only until a page fetches them |
-| `battle/bg/*.jpg` | `assets/viridian-forest/battle/` | `kanto-viridian-forest` — location-unique, see [`BATTLE_ART.md`](../BATTLE_ART.md) |
+| `region/*.jpg` | `assets/viridian-forest/region/` | the ringed overview — rename to **`kanto-map-viridian-forest.jpg`** for the Extras area overview, matching `assets/celadon-city/region/kanto-map-celadon-city.jpg` |
+| `region-maps/*.jpg` | `assets/viridian-forest/region/` | the four area maps, consumed by the Region Extras area-map flow |
+| `battle/bg/*.jpg` | `assets/viridian-forest/battle/bg/` | `kanto-viridian-forest` — location-unique, see [`BATTLE_ART.md`](../BATTLE_ART.md) |
 
 **Battles are location-unique** — no location borrows another's battlefield. So this one installs to `assets/viridian-forest/battle/bg/kanto-viridian-forest.jpg`, and `49b2987`'s removal of the per-location `battle/` folders needs reversing for battles. Full picture, including every field key and what art is missing: [`requests/BATTLE_ART.md`](../BATTLE_ART.md). `card.FIELDS` also needs a `kanto-viridian-forest` entry before this can be drawn.
 
