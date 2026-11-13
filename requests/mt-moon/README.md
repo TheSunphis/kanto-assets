@@ -3,7 +3,7 @@
 Mt. Moon for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style, built to stand as its own
 **Extra** — a non-town special place with its own folder, the way Sea Cottage does.
 
-**29 of ~34 — batches 1–3: the cave, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
+**35 of 35 — the set is complete.** 11 place scenes, 10 portraits, 6 story beats, 2 battlefields, 4 floor maps, 2 region views.
 
 ---
 
@@ -143,6 +143,30 @@ only warm light in a cold place. If it reads as too much beside the cave scenes,
 
 Wiring: `"moon-gazer": "mt-moon"` in `PORTRAITS`, plus a `Person(...)`. Dialogue only.
 
+### Batch 4 — floor maps and the two region views
+
+**Floor maps**, 1376 × 768 under `routeinfo/` — the same category the installed `assets/mt-moon/routeinfo/mt-moon.jpg`
+already lives in, so these drop into place:
+
+| File | Floor | Shows | Weight |
+|---|---|---|---|
+| `routeinfo/mt-moon.jpg` | Overview | The whole cave as one plan: chambers joined by winding tunnels, dead ends, streams, boulder scatters, ladders between levels, openings at west and east where the road passes through | 533 KB |
+| `routeinfo/mt-moon-1f.jpg` | Entry level | The entrance chamber, the long diagonal to the central cavern with its two alcoves, the narrow way east, two ladders down, a stream along the bottom | 501 KB |
+| `routeinfo/mt-moon-b2f.jpg` | Collapsed level | Three pits breaking the floor into islands joined by single-file bridges, side chambers north, two ladders, a crystal alcove | 283 KB |
+| `routeinfo/mt-moon-fossil-chamber.jpg` | Fossil chamber | One room, the raised shelf on the north wall carrying both fossils, a single corridor in from the south, a ladder at the east corner | 291 KB |
+
+**Region views**, both ringed in code after checking where the mountain actually landed:
+
+| File | Shows | Mt. Moon ringed at |
+|---|---|---|
+| `region/kanto-mt-moon.jpg` | The whole Kanto landmass: ridges north, forest west, the southern port, the volcano island below — and a single grey-brown mountain standing over the road with a black cave mouth at its foot | `840, 190`, r 125 × 110 |
+| `region/kanto-map-mt-moon.jpg` | The flat schematic: pale land, grey ridges, blue coast, two southern islands, with the mountain drawn as one rounded peak and the cave mouth cut into its base | `692, 155`, r 148 × 105 |
+
+Two rejection-and-retry rounds were needed on the landmass view: the first came back as a zoomed-in corner rather than
+the whole region, and the second came back wordless in the right framing but with the region's map style intact. The
+schematic's peak reads a little like the volcano island drawn grey — different enough at a glance, and it is the
+smaller of the two files.
+
 ### Note on the art already in `assets/mt-moon/`
 
 Both installed town scenes were 1280 × 796. Both are now replaced here at 1408 × 768: `town/mt-moon` is the main
@@ -150,11 +174,16 @@ chamber, `town/mt-moon-fossils` is the fossil shelf, redrawn to match the rest o
 
 ---
 
-## Still to come
+## The set is complete
 
-| Batch | Contents | Count |
+| Category | Count | Notes |
 |---|---|---|
-| 4 | Area maps of each floor under `routeinfo/`, both region views with the ring on the mountain between Pewter and Cerulean, the labelled reference sheet | ~5 |
+| Place scenes | 11 | `town/` — one per proposed building key, including both installed filenames redrawn |
+| Portraits | 10 | six redrawn from scene-style originals, four new (`seymour`, `rocket-scout`, `fossil-maniac`, `moon-gazer`) |
+| Story beats | 6 | the fossil choice, the Man in Black, two grunts, the rockfall, the lit shaft, the dawn exit |
+| Battlefields | 2 | `mt-moon-cave`, `mt-moon-crater` — no cave field key existed before |
+| Floor maps | 4 | overview, entry level, collapsed level, fossil chamber |
+| Region views | 2 | landmass and schematic, both ringed |
 
 ---
 
@@ -165,3 +194,5 @@ chamber, `town/mt-moon-fossils` is the fossil shelf, redrawn to match the rest o
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the nine cave scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the nine portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — fossil shelf, moon gazer, six story beats, both battlefields |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — four floor maps, two region views |
+| `_mt-moon-labeled-reference.jpg` | The map side of the set at a glance, captioned, both ring coordinates printed |
