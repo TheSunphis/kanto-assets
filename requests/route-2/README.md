@@ -4,6 +4,8 @@ The Route 2 road for PokéBot, in the **Pokémon Fire Ash** style.
 
 **11 of 18 — 11 assets staged.** Viridian Forest has its own set: **[`requests/viridian-forest/`](../viridian-forest/)**.
 
+**Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
+
 ---
 
 ## Why the forest is not in here
@@ -76,7 +78,7 @@ Route 2 in Fire Ash also holds the **north-western terminus of Diglett's Cave**,
 
 ---
 
-## Install — the new `assets/<location>/` layout
+## Install — proposal only, nothing applied yet (`assets/<location>/` layout)
 
 `kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. This set installs to `assets/route-2/` — which today holds the older route-2 map art and its `ATTRIBUTION.md`, alongside `town/` and `routeinfo/`.
 

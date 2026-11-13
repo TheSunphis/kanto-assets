@@ -4,6 +4,8 @@ Viridian Forest for PokéBot, in the **Pokémon Fire Ash** style.
 
 **22 of 23 — 22 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
 
+**Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
+
 ---
 
 ## Fire Ash says this is a place, not a stretch of road
@@ -137,7 +139,7 @@ The Iconic Pidgeotto clearing that was held back in batch 3 is now done, regener
 
 ---
 
-## Install — the new `assets/<location>/` layout
+## Install — proposal only, nothing applied yet (`assets/<location>/` layout)
 
 `kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. So this set installs to `assets/viridian-forest/`:
 
