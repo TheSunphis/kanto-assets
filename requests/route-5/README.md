@@ -2,7 +2,7 @@
 
 Route 5 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**20 of ~31 — batches 1 and 2: the road and its people.** Everything here is staged for review; nothing is installed.
+**30 of ~35 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -90,6 +90,31 @@ Pokémon, the one who won't let you into the city, and seven people simply livin
 None of them needs a `Trainer(...)` entry — that is the point of this route. `daycare-man` needs the Day Care service
 hook (₽100 to leave, ₽100 a level to collect) and `gate-guard` needs the gate's `requires` gated on the Tea.
 
+### Batch 3 — story beats (8) and both battlefields
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/route-5-daycare-deal.jpg` | The ₽100 | The front room: wallpaper, china on a dresser, lace curtains. An old man leans over an open ledger of **blank** pages, palm up, naming a price; a trainer's satchel lies open between them | 655 KB |
+| `story/route-5-daycare-yard.jpg` | Where they stay | The garden run, **empty but clearly in use**: three shallow bowls set out on the grass, a wicker bed with a blanket, a water trough, the clothesline, an apple tree dropping fruit | 612 KB |
+| `story/route-5-gate-refused.jpg` | No | The arch with the portcullis **down**, a guard in slate blue with one white glove raised palm-out, a trainer stopped mid-step in the road | 628 KB |
+| `story/route-5-gate-tea.jpg` | The Tea | The same arch with the portcullis **up**, warm light through the passage, the guard standing to one side with a small porcelain cup of tea and an apologetic shrug | 494 KB |
+| `story/route-5-tunnel-lit.jpg` | Under the city | The brick tunnel with ten lamps receding, dark gaps between the pools of light, and an old man with a lighter pole far down, reaching for the next bracket | 500 KB |
+| `story/route-5-ledge-descent.jpg` | Down the shelves | Three ledges stepping away below, walkways along their tops, a trainer at the edge holding their cap on, the city gatehouse small in the distance | 558 KB |
+| `story/route-5-meadow-listen.jpg` | Listening | A boy of nine leaning over the fence, both hands on the rail, mouth open — and the tall grass beyond visibly **parted into trails** as though something has just pushed through | 633 KB |
+| `story/route-5-dusk-road.jpg` | The walk down | The road in blue evening shadow, lamps just lit along it, the city a dark silhouette with two windows burning, one small figure walking away | 268 KB |
+
+**Both battlefields — and the first one closes a real hole.** `card.FIELDS["kanto-route-5"]` has existed at
+`(976, 380, 480, 640)` with **no file behind it**, the only route in Kanto holding a field key and no art:
+
+| File | Field key | Shows | Weight |
+|---|---|---|---|
+| `battle/bg/kanto-route-5.jpg` | `kanto-route-5` *(already declared — this fills it)* | Mown grass and pale paving in the foreground, a white post-and-rail fence with a gap, tall grass beyond it, round bushes and a flowering tree, and the city's wall and gatehouse tower low on the horizon | 597 KB |
+| `battle/bg/kanto-route-5-underground.jpg` | `kanto-route-5-underground` *(new)* | Inside the tunnel: flagged stone floor, red brick with whitewashed courses, two bracket lamps and hard shadow between them, a bench and bin pushed to the edges | 386 KB |
+
+Anchors for both: `(976, 380)` far — `(480, 640)` near, matching the anchors the existing key already declares,
+scale `1.0`. The underground field is only needed if the tunnel ever becomes its own hunt area; the route field is
+the one that matters today.
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -113,7 +138,6 @@ hook (₽100 to leave, ₽100 a level to collect) and `gate-guard` needs the gat
 
 | Batch | Contents | Count |
 |---|---|---|
-| 3 | Story beats — the ₽100 deal, collecting a levelled Pokémon, the guard's refusal, the walk down, the tunnel lit — plus **both battle fields, including the missing `kanto-route-5`** | ~7 |
 | 4 | Route maps, both region views ringed, the labelled reference | ~5 |
 
 ---
@@ -124,3 +148,4 @@ hook (₽100 to leave, ₽100 a level to collect) and `gate-guard` needs the gat
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
