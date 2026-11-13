@@ -2,7 +2,7 @@
 
 Vermilion City for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**20 of ~40 — batches 1 and 2: the city and its people.** Everything here is staged for review; nothing is installed.
+**30 of ~40 — batches 1–3: the city, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -108,6 +108,36 @@ beyond scenery.
 `gentleman-tucker` as his two Gym trainers. `fan-club-president`, `fan-club-lady`, `fishing-guru`,
 `cerise-receptionist` are dialogue only.
 
+### Batch 3 — story beats (8) and both battlefields
+
+Story frames are allowed to carry people — they are frozen moments, not places the bot returns to.
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/vermilion-anne-boarding.jpg` | Boarding the S.S. Anne | The liner's lit hull at dusk, a gangway down to the quay, a sailor with a clipboard, a young trainer holding something small up to him | 442 KB |
+| `story/vermilion-captain-cabin.jpg` | The seasick captain | A panelled cabin lit by swinging oil lamps, portholes showing tilted water, a big man in a navy coat bent over the desk, green about the gills, the whole room at a faint angle | 503 KB |
+| `story/vermilion-gym-brock.jpg` | Brock won't move | A stocky figure seen from behind, square in front of the half-open steel door, arms folded, a sapling in the crack beside him | 475 KB |
+| `story/vermilion-gym-switches.jpg` | The trash cans | A bare concrete gym under cage lamps, conduit and junction boxes along the wall, a row of metal cans with their lids resting against them, one lid off on the floor | 478 KB |
+| `story/vermilion-fan-club-parlour.jpg` | The Fearow story | A parlour stuffed with ornaments and lace curtains: an old man in a cardigan leaning forward mid-tale, tea tray between him and a seated trainer seen from behind, golden window light | 512 KB |
+| `story/vermilion-ritchie-docks.jpg` | Ritchie at the docks | A timber pier at sunset, a boot up on the bollard, a young trainer in a green headband silhouetted against flat orange water | 436 KB |
+| `story/vermilion-lighthouse-rocket.jpg` | At Bill's Lighthouse | The red-banded tower at night with its beam sweeping out over black water, two black-uniformed figures small on the path below, one pointing up | 360 KB |
+| `story/vermilion-ferry-dawn.jpg` | The ferry out | First light on three empty piers, a white ferry easing away with its wake spreading, warehouses in mist. Empty — the departure belongs to the place | 523 KB |
+
+**Battlefields**, both 1376 × 768 and empty of figures. Note that Vermilion had **no `card.FIELDS` key at all**, so
+every trainer here currently fights on `grass`:
+
+| File | Proposed field key | Shows | Weight |
+|---|---|---|---|
+| `battle/bg/vermilion-gym.jpg` | `vermilion-gym` | The gutted shed as an arena: plain concrete floor, brick wall, steel trusses, conduit and junction boxes, two cage lamps, cans and barrels pushed to the edges | 292 KB |
+| `battle/bg/vermilion-harbour.jpg` | `vermilion-harbour` | The quay as an arena: stone setts, bollards and coiled rope at the edge, deep blue water, the liner's hull to the left, crane and crates to the right | 521 KB |
+
+Anchors for both, by the convention every field uses: `(976, 392)` far — `(458, 648)` near, scale `1.0`.
+
+**A wiring wrinkle worth knowing:** Brock's portrait lives at `assets/pewter-city/people/brock.jpg`, and `Person`
+carries a single `town` field. So standing him in front of the Vermilion Gym means a second entry —
+`Person("brock-vermilion", "Brock", "vermilion-city", ...)` — with `PORTRAITS["brock-vermilion"] = "pewter-city"`
+pointing back at the same file. One portrait, two places.
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -140,8 +170,7 @@ Notes on three of them:
 
 | Batch | Contents | Count |
 |---|---|---|
-| 3 | Story beats — boarding the S.S. Anne, the seasick captain, the tree in front of the Gym, the switches in the trash cans, the Fan Club audience, Ritchie at the docks, Jessie and James at Bill's Lighthouse — plus `vermilion-gym` and `vermilion-harbour` battle fields | ~10 |
-| 4 | `town/vermilion-cerise-lab` and a school scene, four area maps, both region views ringed, the labelled reference | ~10 |
+| 4 | `town/vermilion-cerise-lab` (the tall building in the centre), a school scene, four area maps, both region views ringed, the labelled reference | ~10 |
 
 ---
 
@@ -151,3 +180,4 @@ Notes on three of them:
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten city scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
