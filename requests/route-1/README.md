@@ -58,7 +58,7 @@ Art for the two scripted quest actions in `Quests/Kanto/Route1/side.py`.
 | `story/route-1-story-arrival.jpg` | The Viridian gate up close, footprints in the dust | 412 KB | `story/route-1-story-arrival.jpg` |
 | `story/route-1-story-pidgey.jpg` | Grass parting, down feathers and dust | 391 KB | `story/route-1-story-pidgey.jpg` |
 | `story/route-1-story-rattata.jpg` | A burrow mouth and small tracks through the grass | 452 KB | `story/route-1-story-rattata.jpg` |
-| `story/route-1-story-hooh-shadow.jpg` | A great bird's shadow sweeping the meadow — the 1% slot | 493 KB | `story/route-1-story-hooh-shadow.jpg` |
+| `story/route-1-story-hooh-lift.jpg` | A ring of grass pressed flat around a rising golden light — the 1% slot | 379 KB | `story/route-1-story-hooh-lift.jpg` |
 
 ### 3. Route map — 1
 
@@ -121,6 +121,11 @@ currently 404s.
 - A **Kanto overview with Route 1 ringed**. `region/route-1-overview.jpg` shows the route itself,
   not its position in Kanto — the previous region set was removed from this repo in `c92f24c`, so
   there is no base map to crop from at the moment.
+
+The `hooh` beat is deliberately creature-free: an earlier version put a bird's shadow in the frame,
+which broke the no-Pokémon content rule, so it was replaced with the empty aftermath — flattened
+grass, a golden light column and a few down feathers. Its grass was also colour-matched to
+`route-1-south` and `route-1-meadow` (grass mean 70/176/68) because the first pass came back pale.
 
 The full Route 1 asset space is now covered: 12 place scenes, 10 story beats, 5 battlefields, the
 route map and its four area crops, both backdrops and the one portrait. Anything further is optional
