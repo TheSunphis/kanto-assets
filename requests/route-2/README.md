@@ -2,7 +2,7 @@
 
 The Route 2 road for PokéBot, in the **Pokémon Fire Ash** style.
 
-**12 images — the road is complete.** Every scene, battlefield and portrait the bot can fetch for Route 2 is here; the two review sheets are extras. Nothing is missing. Viridian Forest has its own set: **[`requests/viridian-forest/`](../viridian-forest/)**.
+**20 images — the road is complete.** 5 place scenes, 3 battlefields, 3 portraits, 4 area maps, 4 story beats, 1 ringed region map. Nothing borrowed from Pika. Viridian Forest has its own set: **[`requests/viridian-forest/`](../viridian-forest/)**.
 
 **Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
 
@@ -42,12 +42,6 @@ Route 2 in Fire Ash also holds the **north-western terminus of Diglett's Cave**,
 | `town/route-2-north.jpg` | North Grass page | Forked path, stony outcrops, Pewter hills on the horizon | 673 KB |
 | `town/route-2.jpg` | `/routeinfo` page `route-2` | Whole road in three bands: grassland → forest → meadow | 778 KB |
 
-### 2. Battlefields — 2
-
-| File | Field key | Weight |
-|---|---|---|
-| `battle/bg/kanto-route-2-and-viridian-forest.jpg` | **`kanto-route-2-and-viridian-forest`** — the registered key, south grass, scale 0.75, composed clear at `(987, 336)` and `(392, 654)` | 278 KB |
-| `battle/bg/kanto-route-2-north.jpg` | `kanto-route-2-north` — north meadow under stony hills | 503 KB |
 
 ### 3. Portraits — 3
 
@@ -66,23 +60,40 @@ Route 2 in Fire Ash also holds the **north-western terminus of Diglett's Cave**,
 
 ---
 
-## Optional extras — none of them required
+## Area maps and region map — included, because nothing comes from Pika any more
 
-The old plan here listed 10 more files. Re-checked against the bot and against what is already in `assets/`, most of them should not be made at all:
+Earlier this README dropped both, on the assumption the Kanto overview and area art could stay shared in Pika. That is not the arrangement: **location art comes from `kanto-assets` only.** So both are here now.
 
-| Item | Verdict |
-|---|---|
-| **3 area maps** (south, gates, north grass) | **Dropped.** `assets/route-2/town/` already ships eight authentic Fire Ash route maps — `kanto-route-2-map.png` overlays endpoints and notes on the Fire Ash Wiki's own `Kanto_Route_2.png`, and `kanto-route-2-map-{south,south-gate,forest,north-gate,north,cave}.png` add bot position markers, all CC BY-SA attributed in `ATTRIBUTION.md`. Generated maps would be invented geography and strictly worse than the real ones. |
-| **Region overview** | **Not needed.** The Kanto overview is shared art and stays in Pika — that is what `49b2987` settled. |
-| **4 road story beats** | **Blocked, not missing.** `bot/quests/model.py`'s `Quest` has no `picture` field, so no quest image is fetched by any screen today. Writing them now buys nothing until that wiring exists. |
-| **1 spare `kanto-route-2-gate` battlefield variant** | Optional cosmetic. The one registered key, `kanto-route-2-and-viridian-forest`, is covered. |
-| **Labelled reference sheet** | Optional — the attributed Fire Ash route maps already do this job properly. |
+| File | Shows | Weight |
+|---|---|---|
+| `region-maps/kanto-route-2-map-south.jpg` | Southern half: road forking north, grass patches on both shoulders, fences, boulders, town gatehouse roof at the bottom edge | 628 KB |
+| `region-maps/kanto-route-2-map-south-gate.jpg` | The south gatehouse in map scale, road running through it, forest packed around | 894 KB |
+| `region-maps/kanto-route-2-map-north-gate.jpg` | The north gatehouse: forest below the gate, sunlit meadow above, road continuing out | 747 KB |
+| `region-maps/kanto-route-2-map-north.jpg` | Northern half: forked road climbing to the stony ridge, tall grass and rock outcrops | 730 KB |
+| `region/kanto-route-2.jpg` | Kanto overview, gold ring drawn in code on the road just north of Viridian City, at the western end of the forest band — `(324, 238)`, radii `76 × 62` | 455 KB |
 
-## The same question applies to Viridian Forest
+**One thing to be aware of:** `assets/route-2/town/` already holds eight *authentic* Fire Ash route maps derived from the Fire Ash Wiki's own `Kanto_Route_2.png`, CC BY-SA attributed in its `ATTRIBUTION.md`. These generated ones are consistent with the rest of this set's art, but they are not the official map — use whichever you prefer, and do not let both claim the same filename.
 
-The forest set's four area maps are generated art of a place that also has an official map. The authentic one is `Kanto_Viridian_Forest_Map.png` on the Pokémon Fire Ash Wiki, and `assets/route-2/town/ATTRIBUTION.md` shows the exact recipe used to bring the Route 2 map in: download the wiki image, convert to PNG, overlay bot markers, keep the CC BY-SA attribution.
+## Story beats — included, with a caveat
 
-Doing that for the forest would be strictly better than all four of my `region-maps/` files. Say the word and I will swap them.
+| File | Beat | Weight |
+|---|---|---|
+| `story/route-2-story-arrival.jpg` | Leaving Viridian City: fence and stone marker at the town boundary, road north between the grass | 671 KB |
+| `story/route-2-story-grass.jpg` | The two big grass patches either side of the road, where the four regulars live | 1030 KB |
+| `story/route-2-story-gate.jpg` | The north gatehouse, forest behind, meadow opening beyond | 769 KB |
+| `story/route-2-story-pweter.jpg` | The last rise before Pewter City: grey ridge, city wall and rooftops at the top of the road | 680 KB |
+
+**Caveat:** `bot/quests/model.py`'s `Quest` has no `picture` field, so no screen fetches quest art today. These are banked until that wiring exists.
+
+## Battlefields — 3
+
+The one registered key plus two location-unique variants:
+
+| File | Field key | Weight |
+|---|---|---|
+| `battle/bg/kanto-route-2-and-viridian-forest.jpg` | **`kanto-route-2-and-viridian-forest`** — the registered key, south grass, scale 0.75 | 278 KB |
+| `battle/bg/kanto-route-2-north.jpg` | `kanto-route-2-north` — north meadow under the stony ridge | 503 KB |
+| `battle/bg/kanto-route-2-gate.jpg` | `kanto-route-2-gate` — the gatehouse as a backdrop, battler spaces clear | 745 KB |
 
 ---
 
