@@ -149,9 +149,10 @@ The Iconic Pidgeotto clearing that was held back in batch 3 is now done, regener
 | `people/*.jpg` | `assets/viridian-forest/people/` | the four Bug Catcher portrait keys |
 | `story/*.jpg` | `assets/viridian-forest/story/` | the eight story beats |
 | `region/*.jpg` | `assets/viridian-forest/region/` | the ringed overview — rename to **`kanto-map-viridian-forest.jpg`** if the forest becomes a place, matching `assets/celadon-city/region/kanto-map-celadon-city.jpg` |
-| `region-maps/*.jpg` | `assets/viridian-forest/region/` | the three area maps, review-only until a page fetches them |
+| `region-maps/*.jpg` | `assets/viridian-forest/region/` | the four area maps, review-only until a page fetches them |
+| `battle/bg/*.jpg` | `assets/viridian-forest/battle/` | `kanto-viridian-forest` — location-unique, see [`BATTLE_ART.md`](../BATTLE_ART.md) |
 
-**One thing the reorg leaves open:** `49b2987` removed `battle/` from the location folders and kept shared battle art in Pika, so `battle/bg/kanto-viridian-forest.jpg` has no home in the new layout. It stays in `requests/` until we decide whether location battlefields get a `battle/` category back or go shared. `card.FIELDS` will need a `kanto-viridian-forest` entry wherever it lands.
+**Battles are location-unique** — no location borrows another's battlefield. So this one installs to `assets/viridian-forest/battle/kanto-viridian-forest.jpg`, and `49b2987`'s removal of the per-location `battle/` folders needs reversing for battles. Full picture, including every field key and what art is missing: [`requests/BATTLE_ART.md`](../BATTLE_ART.md). `card.FIELDS` also needs a `kanto-viridian-forest` entry before this can be drawn.
 
 Then the code:
 
