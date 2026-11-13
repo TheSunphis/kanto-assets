@@ -14,15 +14,23 @@ Scene images are backgrounds/art only: dialogue, quest text, buttons, and UI are
 
 ## Current Pallet Town inventory
 
-| Path | Intended use | Status |
-|---|---|---|
-| `assets/region/kanto-pallet-town.jpg` | Existing `/region` map source | Reworked in place to show Oak’s Corral behind the Lab; original map geography and existing labels preserved |
-| `assets/town/ash-home.jpg` | Ash’s Home scene | Used by Ash’s Home; one home location |
-| `assets/town/oak-corral.jpg` | Oak’s Corral/Pasture | Used by the Pallet Town scene |
-| `assets/town/rival-house.jpg` | Rival’s House scene | Used by the Pallet Town scene |
-| `assets/people/delia.jpg` | Delia NPC portrait | Used by Ash’s Home |
-| `assets/story/pallet-lab-revisit.jpg` | Oak in the lab on revisits | Used by the Pallet Town scene |
-| `assets/story/pallet-starter-choice-4.jpg` | Oak’s lab with four starter options | Used by `/start`; matches current four choices |
-| `assets/drafts/town/pallet-home-alternative.jpg` | Earlier home interior alternate | Archive/draft; not a second building |
+The 13-image set staged under `requests/pallet-town/` is installed in `assets/`; the request folder was removed after verification. The active images use the FireRed / Fire Ash pixel-art style and are wired into `/region`, Pallet Town buildings, NPC portraits, `/start`, and quest epilogues.
+
+| Path | Intended use |
+|---|---|
+| `assets/region/kanto-pallet-town.jpg` | Pallet Town overview/map |
+| `assets/town/ash-home.jpg` | Ash’s Home and the home-rest scene |
+| `assets/town/oak-corral.jpg` | Oak’s Corral |
+| `assets/town/rival-house.jpg` | Rival’s House |
+| `assets/town/outside-lab.jpg` | Distinct scene outside Oak’s Lab |
+| `assets/story/pallet-lab-revisit.jpg` | Oak’s Lab on revisits |
+| `assets/story/pallet-starter-choice-4.jpg` | `/start` four-starter choice |
+| `assets/story/pallet-oak-corral.jpg` | Oak’s Corral quest-completion scene |
+| `assets/story/pallet-rival-training.jpg` | Gary’s training-quest thank-you scene |
+| `assets/people/delia.jpg` | Delia portrait |
+| `assets/people/professor-oak.jpg` | Professor Oak portrait |
+| `assets/people/gary.jpg` | Gary portrait |
+| `assets/people/daisy.jpg` | Daisy portrait |
+| `assets/drafts/town/pallet-home-alternative.jpg` | Earlier home-interior alternate; archived, not used as a second building |
 
 The public raw asset base URL is `https://raw.githubusercontent.com/TheSunphis/kanto-assets/main/assets`.
