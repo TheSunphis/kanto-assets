@@ -2,7 +2,7 @@
 
 Route 4 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**10 of ~30 — batch 1: the road.** Everything here is staged for review; nothing is installed.
+**20 of ~30 — batches 1 and 2: the road and its people.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -70,6 +70,38 @@ currently use the joined road's backdrop rather than anything specific to the ro
 | `r4e` | East Gate | `town/route-4-east-gate` | Two stone posts, a worn milestone, and the first rooftops of the city beyond. |
 | `r4m` | Cave Mouth | `town/route-4-cave-mouth` | Back out in the daylight, looking up at the hole you came through. |
 
+### Batch 2 — the people (10)
+
+Five of these are the route's fixed furniture and five are the road's regulars. Every age is stated in the prompt on
+purpose: the children are children, the old masters are old, and the salesman is a grown man who has done this before.
+
+| File | Key | Role | Design | Weight |
+|---|---|---|---|---|
+| `people/magikarp-salesman.jpg` | `magikarp-salesman` | Sells a Magikarp for ₽500 in the Center. **No refunds** | **Man of forty-five**: narrow-faced, thin curled moustache, slicked hair, eyes half-closed in a sly grin, brown trench coat collar up, felt hat, one hand out palm-up | 114 KB |
+| `people/tutor-mega-punch.jpg` | `tutor-mega-punch` | Teaches **Mega Punch** | **Man of seventy**: short, barrel-chested and enormous, bald with thick white brows, flattened nose, indigo gi with a white sash, fists up in a boxer's guard, scarred knuckles | 150 KB |
+| `people/tutor-mega-kick.jpg` | `tutor-mega-kick` | Teaches **Mega Kick** | **Man of seventy**: tall and gaunt, thin grey topknot and wispy beard, white gi with a black sash, one bare foot held out straight in a slow high kick | 106 KB |
+| `people/lass-crissy.jpg` | `lass-crissy` | The **only trainer on the eastern half**, up on the highest hill | **Girl of twelve**, child proportions: brown bob with a red ribbon, freckles, pale blue pinafore over a white blouse, satchel, one hand shading her eyes | 115 KB |
+| `people/rock-girl.jpg` | `rock-girl` | Trips over a boulder she was sure was a creature | **Girl of seven**, unmistakably small: round cheeks, gap-toothed pout, yellow sundress with a green sash, one knee scraped and bandaged, hand rubbing the back of her head | 114 KB |
+| `people/route4-hiker.jpg` | `route4-hiker` | Trainer on the west climb | **Woman of thirty**: wiry, dark braid, sunburnt, rust-orange rain shell, olive trousers with a knee patch, mud on her boots, walking pole planted beside her | 136 KB |
+| `people/route4-bird-keeper.jpg` | `route4-bird-keeper` | Trainer watching the sky | **Man of nineteen**: lanky, straw-blond hair under a soft green cap, olive shirt sleeves rolled, binoculars round his neck, one hand raised to them | 114 KB |
+| `people/route4-picnicker.jpg` | `route4-picnicker` | Trainer at the grass | **Woman of twenty-four**: wavy auburn hair with a checked scarf, freckles, cream sundress, straw hat hanging down her back, covered wicker basket | 132 KB |
+| `people/route4-camper.jpg` | `route4-camper` | Trainer at the ledges | **Boy of seventeen**: skinny, sunburnt, backwards navy cap, plaster on one cheek, canvas rucksack with a frying pan tied on, hands on hips | 129 KB |
+| `people/route4-traveller.jpg` | `route4-traveller` | Walks the route and complains about it | **Woman of seventy-five**: round-backed, grey bun under a dark headscarf, charcoal skirt, mustard cardigan, tartan shawl, basket over one arm, a hand on her aching back | 127 KB |
+
+**Wiring:**
+
+```python
+"magikarp-salesman": "route-4", "tutor-mega-punch": "route-4", "tutor-mega-kick": "route-4",
+"lass-crissy": "route-4", "rock-girl": "route-4", "route4-hiker": "route-4",
+"route4-bird-keeper": "route-4", "route4-picnicker": "route-4", "route4-camper": "route-4",
+"route4-traveller": "route-4",
+```
+
+`lass-crissy`, `route4-hiker`, `route4-bird-keeper`, `route4-picnicker` and `route4-camper` need `Trainer(...)`
+entries if they are meant to battle — the salesman, both tutors, the girl and the old traveller are dialogue only.
+The salesman also needs an item hook: ₽500 for a Magikarp, with **no refund** — that is the joke and it should
+survive into the code.
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -93,9 +125,8 @@ currently use the joined road's backdrop rather than anything specific to the ro
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | Portraits — the Magikarp salesman, both Move Tutors, the Lass on the hill, the girl and the boulder, a hiker, a picnicker, a bird keeper, a camper | ~10 |
-| 3 | Story beats — the ₽500 sale, the boulder that isn't, the ledge jump, the tutors' demonstration, the hilltop Lass — plus a `kanto-route-4` battle field split west and east | ~8 |
-| 4 | The route maps (overview, west, east), both region views ringed, the labelled reference | ~6 |
+| 3 | Story beats — the ₽500 sale, the boulder that isn't, the ledge jump, the tutors' demonstration, the hilltop Lass — plus the `kanto-route-4` battle fields, west and east | ~8 |
+| 4 | Route maps (overview, west, east), both region views ringed, the labelled reference | ~6 |
 
 ---
 
@@ -104,3 +135,4 @@ currently use the joined road's backdrop rather than anything specific to the ro
 | File | What |
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
