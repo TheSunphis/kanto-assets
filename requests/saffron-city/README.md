@@ -2,7 +2,7 @@
 
 Saffron City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**20 of ~40 — batches 1 and 2: the city, and ten of its people.** Nothing is installed; every file stays in `requests/`.
+**30 of ~40 — batches 1–3: the city, eighteen of its people, and both battlefields.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -65,7 +65,7 @@ Pewter is stone and Cerulean is water; **Saffron is height and walls.** The city
 | `town/saffron-fan-club.jpg` | `fc` | Trainer Fan Club: warm yellow single-storey hall, bow window of framed photographs and pennants, rolled red carpet at the door | 485 KB |
 | `town/saffron-north-gate.jpg` | `ng` | The north gate: fortified gatehouse, rounded archway onto the road out to Route 5, turrets, ivy, iron lanterns, hills beyond | 728 KB |
 
-### Portraits — 10 of ~15
+### Portraits — 18 of ~20
 
 Full-body sprites on flat cream `(244,245,227)`, 726 px tall flush to the bottom, 2 px grid, 48 colours. Nobody here exists in the bot yet — each needs a `Person(...)` entry **and** a line in `people.PORTRAITS`, or the game will show the building's picture instead of the face.
 
@@ -84,21 +84,45 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall flush to the bottom
 
 The age spread is deliberate and checked: children are child-proportioned (`copycat` is visibly the smallest figure in the set), the dojo master and the Silph guard read as grown men, and the two elderly characters read as elderly rather than merely older.
 
+#### Batch 3 — the Gym's psychics, the Dojo's black belts, the tower's staff
+
+| File | Proposed key | Design | Weight |
+|---|---|---|---|
+| `people/psychic-cameron.jpg` | `psychic-cameron` | **Adult**, about twenty: shaggy pale blond hair, half-lidded eyes, deep purple hooded tunic with wide sleeves over lilac trousers, palms turned up | 110 KB |
+| `people/psychic-rachel.jpg` | `psychic-rachel` | **Adult**, about twenty-two: very long straight violet hair with one thin braid, lilac-and-white bodysuit, short purple mantle, gold bangles, fingers spread | 108 KB |
+| `people/psychic-iona.jpg` | `psychic-iona` | **Elderly**, about sixty: silver hair in a pin-heavy bun, lined face, deep-plum fringed shawl over a lavender gown, amethyst pendant, hand raised flat | 108 KB |
+| `people/blackbelt-hitoshi.jpg` | `blackbelt-hitoshi` | **Adult**, about twenty-five: shaved head, short dark beard, white gi, brown belt, barefoot, fists raised in guard | 115 KB |
+| `people/blackbelt-hideki.jpg` | `blackbelt-hideki` | **Adult**, about thirty: stocky and broad, spiky hair, red headband, sleeveless gi, taped wrists, one fist forward | 137 KB |
+| `people/silph-rocket.jpg` | `silph-rocket` — the man in black | **Adult**, about thirty: black peaked cap and uniform with a plain red circle emblem, gloves and boots, utility belt, hand on a holstered item, weight on one leg, enjoying the obstruction | 83 KB |
+| `people/silph-receptionist.jpg` | `silph-receptionist` | **Adult**, about twenty-eight: auburn hair tucked behind one ear, pale blue blazer over a white blouse, hands folded at the waist | 88 KB |
+| `people/silph-scientist.jpg` | `silph-scientist` | **Adult**, about forty: thinning hair, thick-rimmed glasses, fretful, lab coat over a pale green shirt, blank ID card, clipboard clutched to his chest | 115 KB |
+
+### Battlefields — both fields Saffron was missing
+
+`card.FIELDS` has no Saffron key at all, so every trainer in the Gym and the Dojo currently fights on the generic `grass` fallback. Two files fix that:
+
+| File | Proposed field key | Anchors | Scale | Shows | Weight |
+|---|---|---|---|---|---|
+| `battle/bg/saffron-gym.jpg` | `saffron-gym` | `(976, 392)` far, `(458, 648)` near | 1.0 | The Psychic Gym arena: checkered violet-and-white tiles, four glowing teleport pads set flush in the floor, mirrored pillars, violet braziers on chains, a marble dais at the far end, drifting haze | 331 KB |
+| `battle/bg/saffron-dojo.jpg` | `saffron-dojo` | `(976, 392)` far, `(458, 648)` near | 1.0 | The Dojo floor: worn tatami mats, dark timber pillars, shoji screens lit from behind, a raised alcove with a **blank** scroll and a flower arrangement, weapons rack, dusty afternoon light | 530 KB |
+
+Both are empty of figures — the trainer sprites and the opponent are drawn over them at runtime, per [`BATTLE_ART.md`](../BATTLE_ART.md).
+
 ### Review
 
 | File | Shows |
 |---|---|
 | `review/_sheet.jpg` | Batch 1 contact sheet — the 10 town scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 10 portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 8 portraits and both battlefields |
 
 ---
 
-## Still to come (batches 3–4, ~20 assets)
+## Still to come (batch 4, ~10 assets)
 
-| Batch | Contents | Count |
-|---|---|---|
-| 3 | The Gym's psychics and the Dojo's black belts, plus the man in black holding Silph, and both battlefields `saffron-gym` and `saffron-dojo` | 10 |
-| 4 | Story beats — the takeover, the warp-tile hall, the dojo's gift, the Marsh Badge — plus 4 area maps, the region overview and the labelled reference | ~10 |
+| Contents | Count |
+|---|---|
+| Story beats — the takeover of the tower, the warp-tile hall, the Dojo's gift, the Marsh Badge — plus 4 area maps, the Kanto region overview and the labelled reference sheet | ~10 |
 
 ---
 
@@ -121,12 +145,12 @@ For the 10 scenes above to open, `people.BUILDINGS` needs an entry. Nothing in t
 ),
 ```
 
-Two battle fields to register in `card.FIELDS`, both currently missing:
+Two battle fields to register in `card.FIELDS`, both still missing — the art for them is already in `battle/bg/` as of batch 3:
 
-| Field key | Anchors (far — near) | Scale |
-|---|---|---|
-| `saffron-gym` | `(976, 392)` — `(458, 648)` | 1.0 |
-| `saffron-dojo` | `(976, 392)` — `(458, 648)` | 1.0 |
+| Field key | Art | Anchors (far — near) | Scale |
+|---|---|---|---|
+| `saffron-gym` | ✅ `battle/bg/saffron-gym.jpg` | `(976, 392)` — `(458, 648)` | 1.0 |
+| `saffron-dojo` | ✅ `battle/bg/saffron-dojo.jpg` | `(976, 392)` — `(458, 648)` | 1.0 |
 
 Those anchors are the convention every other set uses, not measurements from these files. Battle art is location-unique, per [`BATTLE_ART.md`](../BATTLE_ART.md).
 
@@ -136,6 +160,8 @@ The ten portraits need their own entries in `people.PEOPLE`, plus a line each in
 # in PORTRAITS, alongside the existing names
 'sabrina', 'saffron-nurse', 'saffron-clerk', 'saffron-guide', 'karate-master',
 'copycat', 'mr-psychic', 'fan-club-chairman', 'silph-guard', 'silph-president',
+'psychic-cameron', 'psychic-rachel', 'psychic-iona', 'blackbelt-hitoshi',
+'blackbelt-hideki', 'silph-rocket', 'silph-receptionist', 'silph-scientist',
 ```
 
 ---
