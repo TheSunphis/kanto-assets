@@ -2,7 +2,7 @@
 
 Viridian Forest for PokéBot, in the **Pokémon Fire Ash** style.
 
-**10 of 23 — 10 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
+**19 of 23 — 19 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
 
 ---
 
@@ -84,20 +84,42 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 | `people/bug-catcher-doug.jpg` | `bug-catcher-doug` | Fourteen and lanky, headband instead of a cap, jar bag at the hip | 123 KB |
 | `people/bug-catcher-samurai.jpg` | `bug-catcher-samurai` | The anime Samurai Fire Ash names him after: indigo kimono, grey hakama, topknot, headband, wooden sword, net | 141 KB |
 
-### 4. Area map — 1
+### 4. Area maps — 3
 
 | File | Shows | Weight |
 |---|---|---|
-| `region-maps/kanto-viridian-forest-map-north.jpg` | Top-down forest edge breaking into bright Route 2 meadow, the path out through the gap, grey stone ridge beyond | 492 KB |
+| `region-maps/kanto-viridian-forest-map-south.jpg` | The southern entrance glade in map scale: gate at the bottom, clearing, paths splitting north, canopy packed around it | 892 KB |
+| `region-maps/kanto-viridian-forest-map-centre.jpg` | The maze heart: the trail forking and doubling back through dense canopy, one clearing off to the right | 878 KB |
+| `region-maps/kanto-viridian-forest-map-north.jpg` | The forest edge breaking into bright Route 2 meadow, path out through the gap, grey stone ridge beyond | 492 KB |
+
+### 5. Story scenes — 7
+
+Backdrops for the talk/quest screens, in Fire Ash's own walkthrough order. No creatures in frame — the Pokémon and items are drawn by `card.py`.
+
+| File | Fire Ash beat | Shows | Weight |
+|---|---|---|---|
+| `story/…-arrival.jpg` | Entering from the south gate | Gate pillars and arch, blank signpost with a red warning triangle, bright glade beyond, shadowed trees deeper in | 866 KB |
+| `story/…-antidote.jpg` | Antidote west of the entrance | A tin lying half-open in the trampled grass at the glade's edge | 695 KB |
+| `story/…-ball.jpg` | Hidden Poké Ball, north-east corner of the glade | Gnarled root base, a red-and-white ball tucked in the gap, one shaft of light | 842 KB |
+| `story/…-path.jpg` | The grass-less path, where two Bug Catchers wait | Narrow packed trail hemmed by walls of tall grass, bending left out of sight | 741 KB |
+| `story/…-potion.jpg` | The Potion the third Bug Catcher guards | Fallen mossy log, dark hollow beneath it, a small bottle tucked in the dry earth | 571 KB |
+| `story/…-exit.jpg` | The last stretch to the northern exit | Dim trunks crowding the foreground, the path running out into a glowing opening | 640 KB |
+| `story/…-stump.jpg` | `forest-first-aid` — the supply stump | Hollow stump with tin and cloth, crate and lantern; one beam of late light, everything else in shade | 604 KB |
+
+### 6. Review
+
+| File | Shows |
+|---|---|
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 7 story scenes + 3 area maps |
 
 ---
 
-## Still to come (13 assets)
+## Still to come (4 assets)
 
 | Contents | Count |
 |---|---|
-| Story beats: arrival at the glade, Iconic Caterpie, the Antidote stashes, the two Bug Catchers on the path, Iconic Pidgeotto, the guarded Potion, the fourth before the exit, `forest-first-aid` at the stump | 8 |
-| Area maps: south entrance, centre, deep maze | 3 |
+| `story/viridian-forest-story-clearing.jpg` — the grassy side-clearing where the Iconic Pidgeotto waits. **Held back:** the first attempt baked a hard-edged rectangle into the light shaft across the middle of the frame, so it was not shipped and needs regenerating | 1 |
+| Deep-maze area map | 1 |
 | Region overview with the forest ringed | 1 |
 | Labelled reference sheet with the Fire Ash route order | 1 |
 
