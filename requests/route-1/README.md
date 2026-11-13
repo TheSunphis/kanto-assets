@@ -2,8 +2,8 @@
 
 Kanto Route 1 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**17 files staged** — 16 installable assets plus one labelled reference. Two battlefield variants are
-still outstanding (see *Still to come*). Everything here is staged for review; nothing has been
+**26 files staged** — 25 installable assets plus one labelled reference. One scene is still
+outstanding (see *Still to come*). Everything here is staged for review; nothing has been
 installed into the live asset folders.
 
 ---
@@ -24,7 +24,7 @@ installed into the live asset folders.
 
 ## Files
 
-### 1. Place scenes — 5
+### 1. Place scenes — 9
 
 One per building in `BUILDINGS["kanto-route-1"]`, so each stop on the route shows its own ground
 instead of all five sharing `town/route-1`.
@@ -36,8 +36,12 @@ instead of all five sharing `town/route-1`.
 | `town/route-1-bridge.jpg` | The plank footbridge over the stream | 611 KB | `town/route-1-bridge.jpg` |
 | `town/route-1-bush.jpg` | The clearing on the far bank, dominated by the big bush | 626 KB | `town/route-1-bush.jpg` |
 | `town/route-1-north.jpg` | The climb to Viridian's stone wall and gate | 505 KB | `town/route-1-north.jpg` |
+| `town/route-1-ledges.jpg` | The terraced ledge steps west of the path | 545 KB | `town/route-1-ledges.jpg` |
+| `town/route-1-fishing.jpg` | The stream bank where the route's fishing happens | 598 KB | `town/route-1-fishing.jpg` |
+| `town/route-1-tall-grass.jpg` | The deep encounter grass, path splitting it | 506 KB | `town/route-1-tall-grass.jpg` |
+| `town/route-1-gate.jpg` | Arriving at Viridian's wall and gateway | 474 KB | `town/route-1-gate.jpg` |
 
-### 2. Story scenes — 2
+### 2. Story scenes — 5
 
 Art for the two scripted quest actions in `Quests/Kanto/Route1/side.py`.
 
@@ -45,6 +49,9 @@ Art for the two scripted quest actions in `Quests/Kanto/Route1/side.py`.
 |---|---|---|---|
 | `story/route-1-story-clerk.jpg` | The stall counter up close, the sample bottle front and centre | 652 KB | `story/route-1-story-clerk.jpg` |
 | `story/route-1-story-bush.jpg` | The big bush with something hidden among the leaves | 600 KB | `story/route-1-story-bush.jpg` |
+| `story/route-1-story-hooh.jpg` | A golden feather lying in parted grass — the 1% Ho-Oh slot's find | 512 KB | `story/route-1-story-hooh.jpg` |
+| `story/route-1-story-fishing.jpg` | The float dipping, rings spreading on the water | 610 KB | `story/route-1-story-fishing.jpg` |
+| `story/route-1-story-signpost.jpg` | Reading the route marker at the Pallet end | 570 KB | `story/route-1-story-signpost.jpg` |
 
 ### 3. Route map — 1
 
@@ -72,7 +79,7 @@ Marked crops of `town/route-1.jpg`, one per `spawns.ROUTE_AREAS` entry. Consumed
 | `town/kanto-route-1-map-bridge.png` | Footbridge & Bush | 1.0 MB | `town/kanto-route-1-map-bridge.png` |
 | `town/kanto-route-1-map-north.png` | North Grass | 962 KB | `town/kanto-route-1-map-north.png` |
 
-### 6. Battlefield backgrounds — 2 of 4
+### 6. Battlefield backgrounds — 4
 
 Keys must exist in `card.FIELDS` with fighter coordinates.
 
@@ -80,6 +87,8 @@ Keys must exist in `card.FIELDS` with fighter coordinates.
 |---|---|---|---|
 | `battle/kanto-route-1.jpg` | Open clearing, rolling hills behind | 262 KB | `battle/bg/kanto-route-1.jpg` |
 | `battle/kanto-route-1-north.jpg` | The Viridian gate on the skyline | 268 KB | `battle/bg/kanto-route-1-north.jpg` |
+| `battle/kanto-route-1-south.jpg` | Pallet's rooftops and the low fence behind | 238 KB | `battle/bg/kanto-route-1-south.jpg` |
+| `battle/kanto-route-1-bridge.jpg` | The footbridge over the stream | 256 KB | `battle/bg/kanto-route-1-bridge.jpg` |
 
 `kanto-route-1` is **already registered** in `card.FIELDS`, so that file is expected today and
 currently 404s.
@@ -100,8 +109,8 @@ currently 404s.
 
 ## Still to come
 
-- `battle/kanto-route-1-south.jpg` and `battle/kanto-route-1-bridge.jpg` — the two remaining
-  battlefield variants. The image budget for this batch ran out at ten generations.
+- `town/route-1-signpost.jpg` — the route marker scene at the Pallet end. The generation failed and
+  the ten-image budget for that batch was already spent; everything else from that batch landed.
 - A Kanto overview with Route 1 ringed. The previous region set was removed from this repo in
   `c92f24c`, so there is no base map to crop from at the moment.
 
@@ -121,7 +130,9 @@ Building("north",    "North Grass",     "kanto/town/route-1-north",  area="route
 PORTRAITS |= {'route1-clerk'}
 
 # card.py — the extra battlefield needs fighter coordinates
-FIELDS["kanto-route-1-north"] = (976, 392, 458, 648)
+FIELDS["kanto-route-1-north"]  = (976, 392, 458, 648)
+FIELDS["kanto-route-1-south"]  = (976, 392, 458, 648)
+FIELDS["kanto-route-1-bridge"] = (976, 392, 458, 648)
 
 # region.py — area markers so the four region maps are used
 markers[ROUTE1] = ({'route-1-south': 'south', 'route-1-middle': 'middle',
