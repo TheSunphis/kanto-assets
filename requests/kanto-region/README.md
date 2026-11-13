@@ -71,8 +71,8 @@ Close-up windows — 1280×940, the picture the bot shows when the trainer is st
 
 Review sheets, not for shipping:
 
-- `review/review-before-after.jpg` — the old hexagon map next to this one.
-- `review/review-town-windows.jpg` — all eleven town windows on one sheet.
+- `review/before-after.jpg` — the old hexagon map next to this one.
+- `review/town-windows.jpg` — all eleven town windows on one sheet.
 
 ## Regenerating them
 
