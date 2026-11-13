@@ -2,7 +2,7 @@
 
 Pewter City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**18 of ~32 — batches 1 and 2: the town, the gym battlefield and five of seven portraits.** Nothing is installed; every file stays in `requests/`.
+**28 of ~33 — batches 1 to 3: the town, the gym battlefield, all seven portraits, nine story beats and the city map.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -96,7 +96,10 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 | `people/pewter-guide.jpg` | `pewter-guide` — Gym Guide | Early thirties, grey buttoned shirt with name tag, clipboard in hand, explaining the Gym's rules | 94 KB |
 | `people/pewter-clerk.jpg` | `pewter-clerk` — Mart Clerk | Mid twenties, blue-and-white cap, blue shirt with white collar, white apron, price gun and parcels | 105 KB |
 
-**Two portraits held back, not shipped:** `gardener` came back as a labelled "GBA Sprite Concept / 64x64 Pixel Master" sheet with several figures and text drawn on it, and `pewter-nurse` came back as a coarse low-resolution block with dark artifacts instead of a clean 726 px sprite. Both need regenerating — they are still outstanding, like the Iconic Pidgeotto clearing was until batch 4 of the forest set.
+| `people/pewter-nurse.jpg` | `pewter-nurse` — Nurse Joy | Adult woman, pink hair in two soft side loops, white cap with pink cross, white dress with pink trim, apron, white stockings | 105 KB |
+| `people/gardener.jpg` | `gardener` | Adult woman in her forties, weathered brown skin, straw sun hat over curly hair, green shirt and canvas apron, gloves at the belt, hand trowel | 118 KB |
+
+Both of these were held back in batch 2 — `gardener` had come out as a labelled "GBA Sprite Concept" sheet with four figures and captions, `pewter-nurse` as a coarse low-resolution block. Both are clean single figures now; the fix was dropping the concept-sheet wording and asking explicitly for one large detailed figure.
 
 ### Story beats — 2
 
@@ -105,21 +108,41 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 | `story/pewter-story-arrival.jpg` | `reach-pewter` — the road from Route 2 through the south gate towers into the grey city | 511 KB |
 | `story/pewter-story-badge.jpg` | `beat-brock` — the stone pedestal in the rock garden, the octagonal Boulder Badge in its case under one shaft of light | 475 KB |
 
+### Story beats — 7 more
+
+| File | Quest it serves | Shows | Weight |
+|---|---|---|---|
+| `story/pewter-story-fossil-lab.jpg` | `talk-curator` | The museum's workroom: brass resurrection machine, clamped fossil stones, amber jars, shelves of specimen boxes | 630 KB |
+| `story/pewter-story-dome-helix.jpg` | `curator-twice` | Two cases side by side under spotlights — the domed fossil left, the spiralled fossil right | 504 KB |
+| `story/pewter-story-gym-door.jpg` | `gym-guide-talk` | The Gym facade: doorway onto the rock garden, a lectern with an open book beside it | 488 KB |
+| `story/pewter-story-gym-inside.jpg` | `beat-camper` | Inside the rock garden: raked gravel, scuffed patches where trainers stood, pedestal at the back | 573 KB |
+| `story/pewter-story-east-exit.jpg` | the old man who blocks Route 3 | The east street, lowered barrier across the road, stone arch to the country beyond | 715 KB |
+| `story/pewter-story-pokeball.jpg` | the hidden Poké Ball | A walled corner of bare ground and one vivid tile of light grass, with the ball tucked into the blades — **drawn in code**, since the generated version left it out | 680 KB |
+| `story/pewter-story-street-corner.jpg` | `pewter-neighbours` | Two streets meeting at a paved corner: bench, dry fountain basin, stairway up between houses, evening light | 774 KB |
+
+### Area map — 1
+
+| File | Shows | Weight |
+|---|---|---|
+| `region-maps/kanto-pewter-city-map.jpg` | The whole city in map scale: gate towers at the bottom, the columned museum and its plaza to the north, the Gym beside its gravel plot, the garden quarter, rocky hills above | 737 KB |
+
 ### Review
 
 | File | Shows |
 |---|---|
 | `review/_sheet.jpg` | Batch 1 contact sheet — all ten town scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the gym battlefield, five portraits, two story beats |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — the two redone portraits, seven story beats, the city map |
 
 ---
 
-## Still to come (batches 3–4, ~14 assets)
+## Still to come (batch 4, 5 assets)
 
-| Batch | Contents | Count |
-|---|---|---|
-| 3 | The two held portraits — `gardener`, `pewter-nurse` — plus 6 more story beats (`visit-museum`, `talk-curator`, `curator-twice`, `gym-guide-talk`, `beat-camper`, the old man at the east exit) and the hidden Poké Ball | 10 |
-| 4 | Area maps (city, south gate, east exit, museum quarter), region map, labelled reference | 6 |
+| Contents | Count |
+|---|---|
+| Area maps: south gate, east exit, museum quarter | 3 |
+| Region map (Kanto overview, gold ring on Pewter) | 1 |
+| Labelled reference sheet with the Boulder Badge order | 1 |
 
 ---
 
