@@ -1,107 +1,103 @@
-# Kanto region — full map set (repainted, corrected geography)
+# Kanto region — full map set, painted GBA art
 
-The whole Kanto map set redrawn: **23 pictures**, one overview, one full-region map per town,
-and one close-up window per town. Same filenames, same sizes and same painter as before, so these
-files drop straight into `assets/region/` with no code change.
+The whole Kanto map set as **hand-painted 32-bit GBA regional art**, not procedural geometry:
+23 pictures — the region overview, one overview per town with the town marked, and one close-up
+map for every town. Same filenames the bot asks for, so they drop into `assets/region/` unchanged.
 
-The old map was painted from a six-point hexagon of land with a notch cut out of it. Kanto came out
-as a blob floating in the sea, with a gulf that does not exist and towns sitting in the wrong place
-relative to the coast. That land shape is the thing this set fixes.
+This replaces the earlier set in this folder, which was drawn by `tools/make_region_images.py`
+out of polygons and looked like it. That version is still in the git history if you want to
+compare; the review sheet `review/before-after.jpg` puts the two side by side.
 
-## What changed geographically
+## How the set was made
 
-`tools/make_region_images.py` holds Kanto's geography as constants. The patch in this folder
-(`kanto_geography.patch`) replaces them; the pictures here are what the patched script renders.
+One master painting of the whole region — the full continent, every town, every road, cave, bridge,
+forest and island in a single coherent illustration — then everything else derived from it:
 
-| Before | After |
-| --- | --- |
-| Land was a 6-point hexagon: `(2,1) (8,1) (8,7) (3.2,7) (3.2,4.6) (2,6.2)` | 40-point tracing of Kanto's real silhouette |
-| A large fake gulf filled the west, so Viridian's country was sea | The west is land, coasted at the mountains behind Indigo Plateau and Viridian; the sea only reaches Kanto from the south and south-west |
-| North edge was a straight line | Mountain wall along the whole north: Victory Road, the Mt. Moon range, the Rock Tunnel crags |
-| No central bay | **The bay is back** — the inlet between Viridian's country and Fuchsia, with the Cycling Road running down its west shore and bridging it south of the Safari Zone |
-| Vermilion was inland | **Vermilion is a port** — its harbour is cut into the coast, open to the sea, with the pier and the S.S. Anne floating in it |
-| Pallet sat on a flat edge | Pallet is on its own little south-west cape, sea to the west, south and east |
-| Cinnabar floated alone | Cinnabar is an island off the south coast, reached by the Route 21 sea lane, with the Seafoam Islands sitting in the mouth of the bay to its east |
-| Routes 26/27/28 ran out over open water to the map edge | A western landmass carries them off-map toward Johto, over Tohjo Falls, the way the land border really runs |
-| Town grass stamps were 300 px and swelled the coast | 215 px for Kanto (`TOWN_R`), so the coastline is the map's shape instead of the towns' |
-| Sea route ends left land strips stitched over the water | Islets off the south-east coast, boats riding in the new bay |
+- `kanto-map.jpg` — the master with every town and landmark named.
+- `kanto-map-<town>.jpg` ×11 — the same master with that town ringed in red.
+- `kanto-<town>.jpg` ×11 — a close-up of the master around that town, at 2× zoom (nearest
+  neighbour, so the pixels stay square and it matches the rest of the art), framed and titled.
 
-Everything else the painter already had is kept and re-seated on the new coast: Viridian Forest,
-Mt. Moon and its tunnel mouths, Rock Tunnel, Victory Road, Tohjo Falls, Nugget Bridge, the Silence
-Bridge over the east inlet, Diglett's Cave, the Power Plant, the Day Care, Sea Cottage, the Safari
-Zone, Vermilion Harbour, Cinnabar's volcano and the Seafoam rocks.
+Because every picture comes from one painting, the coastline, roads and landmarks line up exactly
+between the overview and the close-ups. Nothing is invented twice and nothing contradicts.
 
-Town positions are untouched — every town stays on the coordinates in `bot/world.py`
-(`KANTO_TOWNS`), so route links, markers and the region menu all still line up.
+## What's on the map
+
+The layout follows Kanto's real geography, and every place the bot knows is on it:
+
+- **North:** the mountain wall behind Indigo Plateau, with the League's stone plateau on its shelf
+  and the long road down through Victory Road.
+- **West:** Viridian Forest's pines, Viridian City's crossroads, and the Tohjo Falls gorge with the
+  road running west toward Johto and Mt. Silver's snow peak beyond it.
+- **North-centre:** Pewter City and its domed museum under the Mt. Moon range, with cave mouths,
+  fallen boulders and the grassy road east.
+- **North-east:** Cerulean City's rivers, bridges and three lakes, Nugget Bridge, Sea Cottage on its
+  cape, Cerulean Cave, and the Power Plant on the far coast.
+- **East:** Rock Tunnel bored through the cliff ridge, and Lavender Town with its stone tower.
+- **Centre:** Celadon's department store, Game Corner and mansion, and Saffron's Silph skyscraper,
+  Fighting Dojo and railway station, four roads meeting between them.
+- **South-east:** Vermilion's harbour wall, pier and moored ferry, Diglett's Cave inland, and the
+  Silence Bridge over the coast inlet.
+- **South:** Fuchsia City beside the Safari Zone's fenced grasslands.
+- **Centre-south:** the great bay, with the Cycling Road bridge on its pilings straight across it.
+- **South-west:** Pallet Town alone on its cape, the Route 21 sea lane south to Cinnabar Island's
+  volcano, and the Seafoam Islands in between.
+- Roads, ledges, tall grass, boulders, flower patches, gatehouses, signposts, lakes, boats and
+  beach shallows throughout.
+
+`review/labels-and-routes.jpg` is the same overview with all 28 route numbers added, if you want to
+check the road network by number.
 
 ## Files (23)
 
-Region overview and per-town region maps — 1280×963:
+Overview — 1536×1536:
 
 | File | Shows |
 | --- | --- |
-| `kanto-map.jpg` | all of Kanto, every town named, for a trainer who is elsewhere |
-| `kanto-map-pallet-town.jpg` | all of Kanto with Pallet Town marked and highlighted |
-| `kanto-map-viridian-city.jpg` | …with Viridian City marked |
-| `kanto-map-pewter-city.jpg` | …with Pewter City marked |
-| `kanto-map-cerulean-city.jpg` | …with Cerulean City marked |
-| `kanto-map-vermilion-city.jpg` | …with Vermilion City marked |
-| `kanto-map-lavender-town.jpg` | …with Lavender Town marked |
-| `kanto-map-celadon-city.jpg` | …with Celadon City marked |
-| `kanto-map-saffron-city.jpg` | …with Saffron City marked |
-| `kanto-map-fuchsia-city.jpg` | …with Fuchsia City marked |
-| `kanto-map-cinnabar-island.jpg` | …with Cinnabar Island marked |
-| `kanto-map-indigo-plateau.jpg` | …with Indigo Plateau marked |
+| `kanto-map.jpg` | all of Kanto, every town and landmark named |
+| `kanto-map-pallet-town.jpg` | …with Pallet Town ringed |
+| `kanto-map-viridian-city.jpg` | …with Viridian City ringed |
+| `kanto-map-pewter-city.jpg` | …with Pewter City ringed |
+| `kanto-map-cerulean-city.jpg` | …with Cerulean City ringed |
+| `kanto-map-vermilion-city.jpg` | …with Vermilion City ringed |
+| `kanto-map-lavender-town.jpg` | …with Lavender Town ringed |
+| `kanto-map-celadon-city.jpg` | …with Celadon City ringed |
+| `kanto-map-saffron-city.jpg` | …with Saffron City ringed |
+| `kanto-map-fuchsia-city.jpg` | …with Fuchsia City ringed |
+| `kanto-map-cinnabar-island.jpg` | …with Cinnabar Island ringed |
+| `kanto-map-indigo-plateau.jpg` | …with Indigo Plateau ringed |
 
-Close-up windows — 1280×940, the picture the bot shows when the trainer is standing in the town:
+Close-up per town — 1280×940:
 
 | File | Shows |
 | --- | --- |
-| `kanto-pallet-town.jpg` | Pallet: Your Home, Rival's House, the Lab, Route 1 north, Route 21 south to Cinnabar |
-| `kanto-viridian-city.jpg` | Viridian: Gym, Trainers' School, Route 1, Route 2 north, the Johto road west |
-| `kanto-pewter-city.jpg` | Pewter: Museum, Gym, Route 2 south, the Mt. Moon wall east |
-| `kanto-cerulean-city.jpg` | Cerulean: Gym, Bike Shop, Nugget Bridge and Route 24 north, Rock Tunnel east |
-| `kanto-vermilion-city.jpg` | Vermilion: Gym, Fan Club, the harbour with the pier and the S.S. Anne, Silence Bridge |
-| `kanto-lavender-town.jpg` | Lavender: Pokémon Tower, Name Rater, Route 8, the coast south |
-| `kanto-celadon-city.jpg` | Celadon: Dept. Store, Game Corner, Mansion, the bay to the south-west |
-| `kanto-saffron-city.jpg` | Saffron: Silph Co., Fighting Dojo, Magnet Train station, Route 6 south |
-| `kanto-fuchsia-city.jpg` | Fuchsia: Gym, Warden's House, the Safari Zone, the bay to the west |
-| `kanto-cinnabar-island.jpg` | Cinnabar: Mansion, Gym, Research Lab, Lab, the volcano, Route 21 north |
-| `kanto-indigo-plateau.jpg` | Indigo Plateau: Pokémon League, Victory Road, the road down to Viridian |
+| `kanto-pallet-town.jpg` | Pallet Town: the houses and the lab on the cape, beach, Route 1 north |
+| `kanto-viridian-city.jpg` | Viridian City: crossroads, forest edge, the road down to Pallet |
+| `kanto-pewter-city.jpg` | Pewter City: the museum, the city, the mountain foot |
+| `kanto-cerulean-city.jpg` | Cerulean City: rivers, bridges, lakes, the cape road north |
+| `kanto-vermilion-city.jpg` | Vermilion City: streets, harbour, pier and the moored ferry |
+| `kanto-lavender-town.jpg` | Lavender Town: the stone tower, the cliff coast, the inlet |
+| `kanto-celadon-city.jpg` | Celadon City: department store, Game Corner, mansion, parks |
+| `kanto-saffron-city.jpg` | Saffron City: Silph tower, dojo, station, the four-way crossing |
+| `kanto-fuchsia-city.jpg` | Fuchsia City: the town, the Safari Zone fence, the bay |
+| `kanto-cinnabar-island.jpg` | Cinnabar Island: volcano, mansion, harbour, sea lanes |
+| `kanto-indigo-plateau.jpg` | Indigo Plateau: the League plateau and Victory Road |
 
 Review sheets, not for shipping:
 
-- `review/before-after.jpg` — the old hexagon map next to this one.
-- `review/town-windows.jpg` — all eleven town windows on one sheet.
+- `review/before-after.jpg` — the old python-painted map next to this one.
+- `review/town-windows.jpg` — all eleven close-ups on one sheet.
+- `review/labels-and-routes.jpg` — the overview with route numbers 1–28 added.
+- `review/unlabelled-map.jpg` — the master with no labels at all, for reuse.
 
-## Regenerating them
+## Wiring
 
-The set is drawn, not hand-painted. Apply the patch, then run the tool for Kanto only:
+Same as before: only Pallet Town's map is currently fetched from this repo
+(`bot/plugins/region.py` → `kanto_asset("region", "kanto-pallet-town.jpg")`, i.e. `assets/region/`);
+the other ten towns still come from the legacy Pika host. To make the whole set live:
 
-```bash
-cd ~/Pokebot
-git apply /path/to/kanto_geography.patch          # swaps the geography constants
-./.venv/bin/python tools/make_region_images.py Kanto
-```
-
-That writes all 23 files into `assets/region/` in about eight seconds. Always pass `Kanto` —
-running the tool with no arguments repaints every region and the nine region boards as well.
-
-`kanto_geography.patch` touches only constants: the coastline `LAND`, the two water cuts (`BAY` for
-Vermilion Harbour, `BAY_E` for the central bay), the western landmass in `MORE_LAND`, `TOWN_R` for
-Kanto's town stamps, two boats in the bay, and one label ("Pond" in Viridian) that was hiding
-behind the Pokémon Center / Poké Mart key.
-
-## Wiring, if you want the game to use them
-
-Only one file here is already live. `bot/plugins/region.py` fetches
-`kanto-pallet-town.jpg` from this repo (`kanto_asset("region", …)` → `assets/region/`), and every
-other town still comes from the legacy Pika host (`asset("region", "kanto-<town>.jpg")`). So:
-
-1. **Copy the 23 files into `assets/region/`** of this repo — that is the folder
-   `KANTO_ASSETS_URL` points at, and it is exactly where the tool writes them. Pallet Town's map
-   then updates with no code change at all.
-2. **Point the other ten towns here too**, in `bot/plugins/region.py`:
+1. Copy these 23 files into `assets/region/` of this repo — Pallet Town updates with no code change.
+2. Point the rest here too, in `bot/plugins/region.py`:
 
    ```python
    def _map_asset(region: str, place: str) -> str:
@@ -111,7 +107,6 @@ other town still comes from the legacy Pika host (`asset("region", "kanto-<town>
        return asset("region", f"{world.MAPS[region]['prefix']}-{picture}.jpg")
    ```
 
-   and the same swap for the whole-region board (`kanto-map.jpg` / `kanto-map-<town>.jpg`) at the
-   two places that build those names further down the file.
+   and the same swap where the overview names are built (`kanto-map.jpg` / `kanto-map-<town>.jpg`).
 
-Until step 1 is done these pictures live only under `requests/`, where the bot cannot see them.
+Until step 1 these pictures live only under `requests/`, where the bot cannot see them.
