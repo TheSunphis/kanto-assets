@@ -2,7 +2,7 @@
 
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**29 of ~40 — batches 1–3: the city, both battlefields, all 15 portraits, and four story beats.** Nothing is installed; every file stays in `requests/`.
+**30 of ~40 — batches 1–3: the city, both battlefields, all 15 portraits, and four story beats.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -82,7 +82,7 @@ So the honest split of this request:
 
 ---
 
-## Files — 8 town scenes
+## Files — 9 town scenes
 
 | File | `people.py` key | Shows | Weight |
 |---|---|---|---|
@@ -94,8 +94,9 @@ So the honest split of this request:
 | `town/cerulean-waterfront.jpg` | **new key** | The canal: quays, iron railings, landing stairs, a tied rowing boat, arched footbridge, white and pale-blue houses | 766 KB |
 | `town/cerulean-north-road.jpg` | **new key** | The road out toward Routes 24/25 and Bill's cottage: flower meadows, signpost at the fork, hills and a river beyond | 632 KB |
 | `town/cerulean-cave-path.jpg` | **new key** | The rocky path to Cerulean Cave: scree, a dark cave mouth under a boulder arch, bright water along the cliff foot | 539 KB |
+| `town/cerulean-bridge-arch.jpg` | **new key** | The arched timber footbridge seen from the near end, empty end to end — the span the Nugget Bridge gauntlet is fought along, as a place rather than a moment | 515 KB |
 
-Five drop onto existing building keys with no code change. Three are extra scenes and need one `Building(...)` entry each.
+Five drop onto existing building keys with no code change. Four are extra scenes and need one `Building(...)` entry each.
 
 ### Portraits — all 15
 
@@ -130,16 +131,20 @@ The child trainers are deliberately small next to `bike-owner`, `cerulean-guide`
 
 ### Story beats — 4, banked until `Quest` grows a picture field
 
-> **The content rule is absolute here: no people and no Pokémon in any scene.** Every character in the bot's scenes is a **portrait sprite** that `card.py` draws at runtime on top of the art — so a figure baked into the background would double up with the portrait, or appear in a beat where no such character is present. These four were generated and inspected empty of figures, and the two bridge pieces **originally shipped with trainers in them and were regenerated from scratch, empty.**
+> **The split that matters: no figures in a _place_, people are fine in a _story_.**
 >
-> The beat has to read from the *place* alone: the barricade says "blocked", the long empty span says "a run to make", not a painted crowd.
+> Town scenes, battlefields, area maps and region views are places the bot returns to for the whole game. A trainer painted into one stands there permanently — through every visit, every time of day — and clashes with the portrait sprite `card.py` draws over the top. So those carry nobody. Every one of the 9 town scenes and both battlefields here is empty of figures, checked.
+>
+> Story art is one frozen moment, so people belong in it: the five waiting along the bridge, the Rocket squared up across the deck. No collision with the portrait layer, because a story frame is never a backdrop someone reinhabits.
+>
+> Both bridge beats were first generated with figures, then emptied, then **restored** once this distinction was made — and the emptied versions were not thrown away: the empty arched span is now `town/cerulean-bridge-arch.jpg`, where an empty bridge is exactly right.
 
-1408 × 768, 64 colours, no people, no creatures — backdrops only:
+1408 × 768, 64 colours. People allowed here — that is the point of the split above. No Pokémon in any of them (creatures are drawn by `card.py`):
 
 | File | Beat | Shows | Weight |
 |---|---|---|---|
-| `story/nugget-bridge-gauntlet.jpg` | The run | The arched timber footbridge seen from the near end, empty end to end, flower boxes and bright canal either side, the far shore's rooftops beyond — the span the five are strung along, waiting for the sprites | 515 KB |
-| `story/nugget-bridge-rocket.jpg` | The far end, closed off | Sunset over the deck with a makeshift roadblock across the far end — stacked crates, dark luggage and two striped sawhorses — the way off the bridge shut. No figure: the Rocket is the portrait sprite | 549 KB |
+| `story/nugget-bridge-gauntlet.jpg` | The five in a row | Five young trainers staged at intervals up the length of the arched timber footbridge, all facing the near end — the gauntlet, read as a shape from a distance | 769 KB |
+| `story/nugget-bridge-rocket.jpg` | The Rocket at the far end | A lone Rocket in black, arms folded square across the deck at sunset, red circle emblem, plainly blocking the way off | 702 KB |
 | `story/cerulean-gym-pool.jpg` | The arena before Misty | Tiled deck, vast turquoise pool, rafts and a diving board, glass tank walls, empty spectator benches | 689 KB |
 | `story/bill-cottage-machine.jpg` | Bill's machine | The humming glass-cored cylinder, cables across the floorboards, a desk of monitors showing only abstract glow, night sea in the round window | 497 KB |
 
