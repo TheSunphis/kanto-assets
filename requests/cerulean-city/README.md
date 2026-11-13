@@ -2,7 +2,7 @@
 
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**10 of ~40 — batch 1 of 4: the city and both battlefields.** Nothing is installed; every file stays in `requests/`.
+**19 of ~40 — batches 1 and 2: the city, both battlefields, and 9 of the 15 portraits.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -46,6 +46,27 @@ The Pokémon Fire Ash Wiki has **no Cerulean City page** — the article renders
 
 ---
 
+## What was already installed — read this before judging the count
+
+`assets/cerulean-city/` is **not empty**. It already holds 23 pieces of Cerulean art, put there by the `0baa964` reorganisation:
+
+| Category | Already in `assets/cerulean-city/` |
+|---|---|
+| Portraits — 14 | `misty`, `bike-owner`, `bridge-lookout`, `bridge-rocket`, `bug-catcher-cale`, `camper-ethan`, `cerulean-clerk`, `cerulean-guide`, `cerulean-nurse`, `lass-ali`, `lass-reli`, `picnicker-diana`, `swimmer-luis`, `youngster-timmy` |
+| Town scenes — 5 | `cerulean-bike`, `cerulean-bridge`, `cerulean-center`, `cerulean-gym`, `cerulean-mart` |
+| Region — 2 | `kanto-cerulean-city`, `kanto-map-cerulean-city` |
+| Route info — 1 | `nugget-bridge` |
+| **Battlefields — 0** | **nothing at all** |
+
+So the honest split of this request:
+
+- **The two battlefields are the real gap.** `cerulean-gym` and `nugget-bridge` had no art in `assets/` or in `requests/`, while nine trainers fight on them.
+- **The 5 town scenes here replace installed ones** — same filenames, art matched to the other Kanto sets.
+- **The 9 portraits here replace installed ones** — same keys, so they drop straight in.
+- **Six portraits had no counterpart in this batch and are still unbuilt here:** `bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan`, plus `bike-owner`, whose generation failed outright this batch. All seven already exist in `assets/`, so they are optional replacements rather than gaps.
+
+---
+
 ## Style & spec
 
 | Property | Value |
@@ -75,21 +96,39 @@ The Pokémon Fire Ash Wiki has **no Cerulean City page** — the article renders
 
 Five drop onto existing building keys with no code change. Three are extra scenes and need one `Building(...)` entry each.
 
+### Portraits — 9 of 15
+
+Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the bottom, 2 px grid, 48 colours. Every one of these **replaces** the same-named file already in `assets/cerulean-city/people/`.
+
+| File | `people.PERSON` key | Design | Weight |
+|---|---|---|---|
+| `people/misty.jpg` | `misty` — Gym Leader | Teenage girl, bright orange hair in a high side ponytail, yellow sleeveless top with red trim, red suspenders, denim-blue shorts, red-and-white high-tops, hand on hip | 118 KB |
+| `people/bill.jpg` | `bill` | Young adult researcher, messy light brown hair, round wire glasses, pen behind the ear, open white lab coat over a green shirt, device in hand | 118 KB |
+| `people/bridge-lookout.jpg` | `bridge-lookout` | Sixteen, wide flat blue cap, freckles, light blue ranger shirt with chest pockets, binoculars up and strap round the neck | 121 KB |
+| `people/cerulean-nurse.jpg` | `cerulean-nurse` — Nurse Joy | Pink hair in two soft side loops, white cap with pink cross, white dress with pink trim, apron — matching the Pewter Centre's Joy exactly | 109 KB |
+| `people/cerulean-clerk.jpg` | `cerulean-clerk` — Mart Clerk | Mid twenties, blue-and-white cap, blue shirt with white collar, white apron, price gun and parcels | 115 KB |
+| `people/cerulean-guide.jpg` | `cerulean-guide` | Late twenties, dark bun, pale blue blazer and trousers, lapel badge, town map in hand, arm raised in welcome | 111 KB |
+| `people/swimmer-luis.jpg` | `swimmer-luis` | Adult swimmer, tanned, wet dark hair, blue trunks, goggles pushed up on his forehead, towel over one shoulder | 103 KB |
+| `people/picnicker-diana.jpg` | `picnicker-diana` | Fifteen, braids under a wide straw hat with a ribbon, green sleeveless top, orange skirt, wicker basket, checkered blanket | 134 KB |
+| `people/bridge-rocket.jpg` | `bridge-rocket` — Team Rocket | Early twenties, black peaked cap and jacket with a plain red circle emblem, boots and gloves, satchel strap, smug | 84 KB |
+
+`bike-owner` **failed to generate** this batch — no retry was possible inside the turn's generation budget. It already exists in `assets/cerulean-city/people/`, so nothing is broken; a replacement is still wanted.
+
 ### Review
 
 | File | Shows |
 |---|---|
-| `review/_sheet.jpg` | Contact sheet of all ten — 8 town scenes, 2 battlefields |
+| `review/_sheet.jpg` | Batch 1 contact sheet — 8 town scenes, 2 battlefields |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 9 new portraits |
 
 ---
 
-## Still to come (batches 2–4, ~30 assets)
+## Still to come (batches 3–4, ~14 assets)
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | Portraits, part one: `misty`, `bill`, `bike-owner`, `bridge-lookout`, `cerulean-nurse`, `cerulean-clerk`, `cerulean-guide`, `swimmer-luis`, `picnicker-diana`, `bridge-rocket` | 10 |
-| 3 | Portraits, part two — `bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan` — plus story beats: the Nugget Bridge gauntlet, the Rocket at the far end, Misty and the Cascade Badge, Bill | 10 |
-| 4 | Story beats continued, area maps (city, Nugget Bridge, gym quarter, cave path), region map, labelled reference | ~10 |
+| 3 | `bike-owner` retry, the five remaining bridge/gym trainers (`bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan`), and story beats for the Nugget Bridge gauntlet and the Rocket at the far end | 10 |
+| 4 | Misty and the Cascade Badge, Bill's machine, the canal scenes; area maps (city, Nugget Bridge, gym quarter, cave path), region map, labelled reference | ~10 |
 
 ---
 
