@@ -3,7 +3,7 @@
 Mt. Moon for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style, built to stand as its own
 **Extra** — a non-town special place with its own folder, the way Sea Cottage does.
 
-**35 of 35 — the set is complete.** 11 place scenes, 10 portraits, 6 story beats, 2 battlefields, 4 floor maps, 2 region views.
+**34 of 34 — the set is complete.** 10 place scenes, 10 portraits, 6 story beats, 2 battlefields, 4 floor maps, 2 region views.
 
 ---
 
@@ -178,7 +178,7 @@ chamber, `town/mt-moon-fossils` is the fossil shelf, redrawn to match the rest o
 
 | Category | Count | Notes |
 |---|---|---|
-| Place scenes | 11 | `town/` — one per proposed building key, including both installed filenames redrawn |
+| Place scenes | 10 | `town/` — one per proposed building key, including both installed filenames redrawn |
 | Portraits | 10 | six redrawn from scene-style originals, four new (`seymour`, `rocket-scout`, `fossil-maniac`, `moon-gazer`) |
 | Story beats | 6 | the fossil choice, the Man in Black, two grunts, the rockfall, the lit shaft, the dawn exit |
 | Battlefields | 2 | `mt-moon-cave`, `mt-moon-crater` — no cave field key existed before |
