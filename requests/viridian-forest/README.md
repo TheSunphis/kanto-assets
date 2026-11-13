@@ -137,12 +137,25 @@ The Iconic Pidgeotto clearing that was held back in batch 3 is now done, regener
 
 ---
 
-## Install — and what the split still needs from the code
+## Install — the new `assets/<location>/` layout
 
-1. Copy into `assets/`: `town/*` → `assets/town/`, `people/*` → `assets/people/`, `battle/bg/*` → `assets/battle/bg/`. Filenames are already the keys the bot fetches.
-2. **`town/viridian-forest.jpg` sorts itself out with no code change** — all six `BUILDINGS["kanto-route-2-and-viridian-forest"]` entries already resolve to it, which is exactly the scene they should show.
-3. Portraits: add the four Bug Catcher keys to `KANTO_PORTRAITS` in `bot/plugins/town.py`. Note they are **already** in `PORTRAITS`, so today they display Pika's art instead.
-4. Battlefield: needs a `kanto/` branch in `battle.py`, which hardcodes `asset("battle", "bg", f"{name}.jpg")`.
+`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. So this set installs to `assets/viridian-forest/`:
+
+| From here | To | Runtime key it serves |
+|---|---|---|
+| `town/*.jpg` | `assets/viridian-forest/town/` | `town/viridian-forest`, `town/viridian-forest-entrance`, `town/viridian-forest-maze`, `town/viridian-forest-cache` |
+| `people/*.jpg` | `assets/viridian-forest/people/` | the four Bug Catcher portrait keys |
+| `story/*.jpg` | `assets/viridian-forest/story/` | the eight story beats |
+| `region/*.jpg` | `assets/viridian-forest/region/` | the ringed overview — rename to **`kanto-map-viridian-forest.jpg`** if the forest becomes a place, matching `assets/celadon-city/region/kanto-map-celadon-city.jpg` |
+| `region-maps/*.jpg` | `assets/viridian-forest/region/` | the three area maps, review-only until a page fetches them |
+
+**One thing the reorg leaves open:** `49b2987` removed `battle/` from the location folders and kept shared battle art in Pika, so `battle/bg/kanto-viridian-forest.jpg` has no home in the new layout. It stays in `requests/` until we decide whether location battlefields get a `battle/` category back or go shared. `card.FIELDS` will need a `kanto-viridian-forest` entry wherever it lands.
+
+Then the code:
+
+1. **`town/viridian-forest.jpg` sorts itself out with no code change** — all six `BUILDINGS["kanto-route-2-and-viridian-forest"]` entries already resolve to it, which is exactly the scene they should show.
+2. Portraits: add the four Bug Catcher keys to `KANTO_PORTRAITS` in `bot/plugins/town.py`. Note they are **already** in `PORTRAITS`, so today they display Pika's art instead.
+3. `_scene_url()` in `town.py` switches on a `kanto/` prefix, so a scene key must be written `kanto/town/viridian-forest` to be served from this repo at all.
 
 If you also want the code to treat the forest as its own place, as Fire Ash does, that is four small edits and no art changes:
 

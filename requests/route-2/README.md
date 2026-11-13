@@ -76,17 +76,26 @@ Route 2 in Fire Ash also holds the **north-western terminus of Diglett's Cave**,
 
 ---
 
-## Install
+## Install — the new `assets/<location>/` layout
 
-1. Copy into `assets/`: `town/*` → `assets/town/`, `people/*` → `assets/people/`, `battle/bg/*` → `assets/battle/bg/`.
-2. All six Route 2 buildings currently resolve to `town/viridian-forest`, which now lives in the forest set. Until `people.py` gives them their own scenes, that one forest file is what the road shows:
+`kanto-assets` was reorganised in `0baa964` / `49b2987` / `6e0889c`: runtime art now lives at `assets/<location>/<category>/<file>` and `requests/` is review-only. This set installs to `assets/route-2/` — which today holds the older route-2 map art and its `ATTRIBUTION.md`, alongside `town/` and `routeinfo/`.
+
+| From here | To |
+|---|---|
+| `town/*.jpg` | `assets/route-2/town/` |
+| `people/*.jpg` | `assets/route-2/people/` |
+| `battle/bg/*.jpg` | no home yet — `49b2987` removed `battle/` from location folders and kept shared battle art in Pika. Stays in `requests/` until that is settled |
+
+Then the code:
+
+1. All six Route 2 buildings currently resolve to `town/viridian-forest`, which lives in the forest set. Until `people.py` gives them their own scenes, that one forest file is what the road shows:
 
 ```python
-Building("locals",         "Route 2 Locals",     "town/route-2-south",      ...),
-Building("south-gate",     "South Gatehouse",    "town/route-2-south-gate", ...),
-Building("north-gate",     "North Gatehouse",    "town/route-2-north-gate", ...),
+Building("locals",         "Route 2 Locals",     "kanto/town/route-2-south",      ...),
+Building("south-gate",     "South Gatehouse",    "kanto/town/route-2-south-gate", ...),
+Building("north-gate",     "North Gatehouse",    "kanto/town/route-2-north-gate", ...),
 ```
 
-3. Portraits: add all three keys to `KANTO_PORTRAITS` in `bot/plugins/town.py`, or they resolve to Pika.
-4. Battlefields: `battle.py` hardcodes `asset("battle", "bg", f"{name}.jpg")` with no `kanto/` branch.
-5. Fire Ash data gap: the road's pool is Pidgey / Rattata / Caterpie / Weedle at Lv. 2–5. Fire Ash also has **Pidgeotto Lv. 5 wild** in the surrounding forest, missing from `spawns.py`.
+2. Portraits: add all three keys to `KANTO_PORTRAITS` in `bot/plugins/town.py`, or they resolve to Pika.
+3. `_scene_url()` in `town.py` switches on a `kanto/` prefix, so scene keys need it to be served from this repo.
+4. Fire Ash data gap: the road's pool is Pidgey / Rattata / Caterpie / Weedle at Lv. 2–5. Fire Ash also has **Pidgeotto Lv. 5 wild** in the forest, missing from `spawns.py`.
