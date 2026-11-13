@@ -2,7 +2,7 @@
 
 Saffron City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**39 of 40 — batches 1–4: the city, its people, both battlefields, the story beats and the maps. One region file still outstanding.** Nothing is installed; every file stays in `requests/`.
+**40 of 40 — the set is complete.** 10 town scenes, 18 portraits, 2 battlefields, 4 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -128,13 +128,14 @@ Story art is the one place people are allowed, because a story frame is a frozen
 | `region-maps/kanto-saffron-city-map-gym-quarter.jpg` | Gym and Dojo **side by side**, the violet dome against the curved wooden roof — the contrast this set is built on | 524 KB |
 | `region-maps/kanto-saffron-city-map-gates.jpg` | The north gate: the wall, the gatehouse over the road out, the townhouses and lanes below it | 695 KB |
 
-### Region view — 1 of 2
+### Region views — 2, at 1376 × 768
 
 | File | Shows | Saffron ringed at |
 |---|---|---|
-| `region/kanto-saffron-city.jpg` | The Kanto landmass with the walled city sitting dead centre where four roads meet — the ring lands on the city itself | `703, 373`, r 172 × 138 |
+| `region/kanto-saffron-city.jpg` | The Kanto landmass with the walled city sitting dead centre where four roads meet — ridges north, forest west, the southern port, the volcano island below | `703, 373`, r 172 × 138 |
+| `region/kanto-map-saffron-city.jpg` | A flat schematic: pale land, grey ridges, forest blocks, two southern islands, and the walled city at the exact centre with four roads radiating out of it in a cross | `690, 372`, r 118 × 108 |
 
-The second, `region/kanto-map-saffron-city.jpg` (a flat schematic), is **not done**: that generation failed and the turn's image budget was already spent. It is the only file missing from the set. Both installed files of these names in `assets/saffron-city/region/` predate the set and would be replaced by this pair.
+Both installed files of these names in `assets/saffron-city/region/` predate the set and would be replaced by this pair. Rings are drawn in code over finished art, after inspecting where the city actually landed — never asked for in the prompt, because generated geography drifts.
 
 ### Review
 
@@ -144,15 +145,20 @@ The second, `region/kanto-map-saffron-city.jpg` (a flat schematic), is **not don
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 10 portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 8 portraits and both battlefields |
 | `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — 4 area maps, 1 region view, 4 story beats |
-| `_saffron-city-labeled-reference.jpg` | The map side of the set at a glance, captioned, with the ring coordinate printed |
+| `_saffron-city-labeled-reference.jpg` | The map side of the set at a glance — both region views and all four area maps, captioned, with both ring coordinates printed |
 
 ---
 
-## The one file outstanding
+## The set is complete
 
-`region/kanto-map-saffron-city.jpg` — the flat schematic Kanto map, the companion to `region/kanto-saffron-city.jpg`. Generation failed and the turn's ten-image budget was already used, so it is held over rather than faked. Everything else in the set is here.
-
----
+| Category | Count | Notes |
+|---|---|---|
+| Town scenes | 10 | all ten need `Building(...)` entries — the town has none |
+| Portraits | 18 | all need `Person(...)` **and** a line in `PORTRAITS` |
+| Battlefields | 2 | `saffron-gym`, `saffron-dojo` — neither field key exists yet |
+| Story beats | 4 | the takeover, the warp hall, the shrine, the Marsh Badge |
+| Area maps | 4 | centre, tower quarter, Gym-and-Dojo, north gate |
+| Region views | 2 | landmass + schematic, both ringed |
 
 ---
 
