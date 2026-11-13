@@ -2,7 +2,7 @@
 
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**30 of ~40 — batches 1–3: the city, both battlefields, all 15 portraits, and four story beats.** Nothing is installed; every file stays in `requests/`.
+**39 of 40 — batches 1–4, complete bar one scene.** 11 town scenes, 2 battlefields, 15 portraits, 5 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -82,7 +82,7 @@ So the honest split of this request:
 
 ---
 
-## Files — 9 town scenes
+## Files — 11 town scenes
 
 | File | `people.py` key | Shows | Weight |
 |---|---|---|---|
@@ -95,8 +95,10 @@ So the honest split of this request:
 | `town/cerulean-north-road.jpg` | **new key** | The road out toward Routes 24/25 and Bill's cottage: flower meadows, signpost at the fork, hills and a river beyond | 632 KB |
 | `town/cerulean-cave-path.jpg` | **new key** | The rocky path to Cerulean Cave: scree, a dark cave mouth under a boulder arch, bright water along the cliff foot | 539 KB |
 | `town/cerulean-bridge-arch.jpg` | **new key** | The arched timber footbridge seen from the near end, empty end to end — the span the Nugget Bridge gauntlet is fought along, as a place rather than a moment | 515 KB |
+| `town/cerulean-canal-boats.jpg` | **new key** | A quiet back canal at quay level: stone embankments, landing stairs, four tied rowing boats, a low arched brick bridge, willows and laundry lines | 904 KB |
+| `town/cerulean-waterfront-night.jpg` | **new key** | The same waterfront after dark: indigo water, lamp posts glowing, lit bridge, curtained windows, a fountain plaza, stars | 637 KB |
 
-Five drop onto existing building keys with no code change. Four are extra scenes and need one `Building(...)` entry each.
+Five drop onto existing building keys with no code change. Six are extra scenes and need one `Building(...)` entry each.
 
 ### Portraits — all 15
 
@@ -146,7 +148,28 @@ The child trainers are deliberately small next to `bike-owner`, `cerulean-guide`
 | `story/nugget-bridge-gauntlet.jpg` | The five in a row | Five young trainers staged at intervals up the length of the arched timber footbridge, all facing the near end — the gauntlet, read as a shape from a distance | 769 KB |
 | `story/nugget-bridge-rocket.jpg` | The Rocket at the far end | A lone Rocket in black, arms folded square across the deck at sunset, red circle emblem, plainly blocking the way off | 702 KB |
 | `story/cerulean-gym-pool.jpg` | The arena before Misty | Tiled deck, vast turquoise pool, rafts and a diving board, glass tank walls, empty spectator benches | 689 KB |
+| `story/misty-pool-edge.jpg` | The gym leader waiting | Misty at the pool edge, orange side ponytail, yellow top, arms folded, facing the empty deck — she is the subject of the moment, which is exactly what story art is for | 540 KB |
 | `story/bill-cottage-machine.jpg` | Bill's machine | The humming glass-cored cylinder, cables across the floorboards, a desk of monitors showing only abstract glow, night sea in the round window | 497 KB |
+
+### Area maps — 4, at 1376 × 768
+
+Town-map style, read straight down, no labels and nobody standing on them. These are what a "where am I in this district" screen needs:
+
+| File | Covers | Weight |
+|---|---|---|
+| `region-maps/kanto-cerulean-city-map-centre.jpg` | The plaza: fountain, Centre, Mart, Gym frontage, canal branch and its little arched bridge | 852 KB |
+| `region-maps/kanto-cerulean-city-map-nugget-bridge.jpg` | The river crossing: the long timber bridge north over the water, embankments, moored boats, the road out | 753 KB |
+| `region-maps/kanto-cerulean-city-map-gym-quarter.jpg` | The aquarium district: the barrel-roofed Gym, its walled flower garden, the promenade and canal | 695 KB |
+| `region-maps/kanto-cerulean-city-map-cave-path.jpg` | North-east: the boulder path climbing to the cave mouth, the turquoise river at its foot, town roofs below | 715 KB |
+
+### Region views — 2, at 1376 × 768
+
+| File | Shows | Cerulean ringed at |
+|---|---|---|
+| `region/kanto-cerulean-city.jpg` | The Kanto landmass: northern ridges, the western forest, the central grey city, the south coast port, the volcano island — the canal city standing out in the north-centre | `924, 206`, r 64 × 50 |
+| `region/kanto-map-cerulean-city.jpg` | A flat schematic of the same region, towns as rooftops on beige routes | `820, 184`, r 88 × 94 |
+
+Both bases are generated for this set, so they match each other but **not** the region maps shipped with Pewter, Viridian or Route 2 — each set's Kanto is a different drawing. If the bot ever wires one canonical base for `/region`, pick a single set's pair and re-ring the rest. The ring is drawn in code over the finished art, never asked for in the prompt.
 
 ### Review
 
@@ -155,19 +178,28 @@ The child trainers are deliberately small next to `bike-owner`, `cerulean-guide`
 | `review/_sheet.jpg` | Batch 1 contact sheet — 8 town scenes, 2 battlefields |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 9 new portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 6 portraits and 4 story beats |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — 4 area maps, 2 region views, 2 town scenes, 1 story beat |
+| `_cerulean-city-labeled-reference.jpg` | The map side of the set at a glance, captioned, with both ring coordinates printed |
 
 ---
 
-## Still to come (batch 4, ~10 assets)
+## The one file still outstanding — the Cascade Badge
 
-| Contents | Count |
-|---|---|
-| Misty waiting at the pool edge, the Cascade Badge, two canal scenes; then the area maps (city, Nugget Bridge, gym quarter, cave path), the Kanto region overview, and the labelled reference sheet | ~10 |
+`story/` has no badge scene. Two attempts were thrown away rather than shipped:
+
+1. **Generated:** came back as a gold swirl that reads as a **letter "C"** on a cushion. A badge that looks like type is worse than no badge.
+2. **Drawn in code over the same cushion:** the pasted badge was oversized, seam-visible and flat beside the generated art — it looked stuck on, so it went too.
+
+The next attempt will draw the badge as **three overlapping blue droplets with gold rims, flat enamel, small on the cushion, no swirls and no letter-like curves.** The cushion/spotlight composition is good and will be reused — only the badge was wrong.
+
+---
 
 ---
 
 ## Install — proposal only, nothing applied yet
 
-This set stays in `requests/`. Under `assets/<location>/<category>/<file>` it would go to `assets/cerulean-city/town/`, portraits to `assets/cerulean-city/people/`, and the two battlefields to `assets/cerulean-city/battle/bg/cerulean-gym.jpg` and `.../battle/bg/nugget-bridge.jpg` — battle art being location-unique, per [`BATTLE_ART.md`](../BATTLE_ART.md).
+This set stays in `requests/`. Under `assets/<location>/<category>/<file>` it would go to `assets/cerulean-city/town/`, portraits to `assets/cerulean-city/people/`, story to `assets/cerulean-city/story/`, area maps to `assets/cerulean-city/region-maps/`, region views to `assets/cerulean-city/region/`, and the two battlefields to `assets/cerulean-city/battle/bg/cerulean-gym.jpg` and `.../battle/bg/nugget-bridge.jpg` — battle art being location-unique, per [`BATTLE_ART.md`](../BATTLE_ART.md).
+
+`assets/cerulean-city/region/` already holds a `kanto-cerulean-city.jpg` and a `kanto-map-cerulean-city.jpg` of its own; the two here are meant to replace that pair so the ring sits at the canal city and matches the area maps.
 
 Two code facts that still apply: `_scene_url()` in `bot/plugins/town.py` needs the `kanto/` prefix on a scene key to serve it from this repo, and `battle.py` has no `kanto/` branch at all, so neither battlefield can be reached until that is added.
