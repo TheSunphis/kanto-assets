@@ -2,7 +2,7 @@
 
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**39 of 40 — batches 1–4, complete bar one scene.** 11 town scenes, 2 battlefields, 15 portraits, 5 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
+**40 of 40 — the set is complete.** 11 town scenes, 2 battlefields, 15 portraits, 6 story beats, 4 area maps, 2 region views. Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -149,6 +149,7 @@ The child trainers are deliberately small next to `bike-owner`, `cerulean-guide`
 | `story/nugget-bridge-rocket.jpg` | The Rocket at the far end | A lone Rocket in black, arms folded square across the deck at sunset, red circle emblem, plainly blocking the way off | 702 KB |
 | `story/cerulean-gym-pool.jpg` | The arena before Misty | Tiled deck, vast turquoise pool, rafts and a diving board, glass tank walls, empty spectator benches | 689 KB |
 | `story/misty-pool-edge.jpg` | The gym leader waiting | Misty at the pool edge, orange side ponytail, yellow top, arms folded, facing the empty deck — she is the subject of the moment, which is exactly what story art is for | 540 KB |
+| `story/cerulean-cascade-badge.jpg` | The badge itself | A round gold-rimmed disc of deep blue enamel — three pale droplets rising in a fan, a thin wave line along the bottom — lying small and centred on the tasselled velvet cushion, spotlight pool around it, the pool hall soft behind | 262 KB |
 | `story/bill-cottage-machine.jpg` | Bill's machine | The humming glass-cored cylinder, cables across the floorboards, a desk of monitors showing only abstract glow, night sea in the round window | 497 KB |
 
 ### Area maps — 4, at 1376 × 768
@@ -183,16 +184,28 @@ Both bases are generated for this set, so they match each other but **not** the 
 
 ---
 
-## The one file still outstanding — the Cascade Badge
+## The badge took three attempts — worth recording
 
-`story/` has no badge scene. Two attempts were thrown away rather than shipped:
+| Attempt | Result | Kept? |
+|---|---|---|
+| 1 — generated | A gold swirl that read as a **letter "C"** standing on the cushion | no |
+| 2 — drawn in code over the same cushion | Oversized, seams visible, visibly stuck on beside generated art | no |
+| 3 — generated, prompt hardened | Round gold-rimmed disc, blue enamel, three droplets and a wave line, small on the cushion | **yes** |
 
-1. **Generated:** came back as a gold swirl that reads as a **letter "C"** on a cushion. A badge that looks like type is worse than no badge.
-2. **Drawn in code over the same cushion:** the pasted badge was oversized, seam-visible and flat beside the generated art — it looked stuck on, so it went too.
-
-The next attempt will draw the badge as **three overlapping blue droplets with gold rims, flat enamel, small on the cushion, no swirls and no letter-like curves.** The cushion/spotlight composition is good and will be reused — only the badge was wrong.
+What fixed it: saying the shape out loud as **round and flat**, and naming the failure directly — *not a letter, not a "C", no spiral, no swirl, none of it reading as typography*. Instructions that only described the badge let the model draw a mark; instructions that banned the wrong shapes got a badge.
 
 ---
+
+## The set is complete
+
+| Category | Count | Files |
+|---|---|---|
+| Town scenes | 11 | 5 on existing building keys, 6 needing a `Building(...)` entry |
+| Battlefields | 2 | `cerulean-gym`, `nugget-bridge` |
+| Portraits | 15 | every `people.PERSON` key at this location |
+| Story beats | 6 | gauntlet, the Rocket, the badge, the arena, Misty waiting, Bill's machine |
+| Area maps | 4 | centre, Nugget Bridge, gym quarter, cave path |
+| Region views | 2 | landmass + schematic, both ringed |
 
 ---
 
