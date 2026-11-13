@@ -2,7 +2,7 @@
 
 Saffron City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**30 of ~40 — batches 1–3: the city, eighteen of its people, and both battlefields.** Nothing is installed; every file stays in `requests/`.
+**39 of 40 — batches 1–4: the city, its people, both battlefields, the story beats and the maps. One region file still outstanding.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -108,6 +108,34 @@ The age spread is deliberate and checked: children are child-proportioned (`copy
 
 Both are empty of figures — the trainer sprites and the opponent are drawn over them at runtime, per [`BATTLE_ART.md`](../BATTLE_ART.md).
 
+### Story beats — 4
+
+Story art is the one place people are allowed, because a story frame is a frozen moment rather than a place the bot returns to. Only the takeover has a figure in it, and only as a distant silhouette.
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/silph-takeover.jpg` | The tower, taken | The lobby after the doors were forced: toppled chairs, papers across the marble, a barricade of desks across the doorway, one lamp still burning, and a single black-clad silhouette far down the hall with his back turned | 482 KB |
+| `story/saffron-warp-hall.jpg` | The hall that moves you | Checkerboard floor, four teleport pads on a broken diagonal, mirror panels reflecting the wrong walls, purple braziers — symmetrical at first glance and wrong on the second | 491 KB |
+| `story/dojo-shrine.jpg` | The Dojo's offer | The shrine alcove: a blank hanging scroll, a low lacquered table with two empty offertory trays, one beam of dusty light across worn tatami | 378 KB |
+| `story/marsh-badge.jpg` | The Marsh Badge | A round gold-rimmed disc of pale pink enamel with three small gold dots, lying small on the violet cushion under a spotlight. No letterform anywhere — the lesson from Cerulean's badge applied up front | 450 KB |
+
+### Area maps — 4, at 1376 × 768
+
+| File | Covers | Weight |
+|---|---|---|
+| `region-maps/kanto-saffron-city-map-centre.jpg` | The crossroads: circular plaza, fountain, four avenues, Centre and Mart on the near corners | 507 KB |
+| `region-maps/kanto-saffron-city-map-silph-quarter.jpg` | The tower quarter: the glass slab and its entrance plaza, dry fountain, grid of streets and mid-rise blocks | 527 KB |
+| `region-maps/kanto-saffron-city-map-gym-quarter.jpg` | Gym and Dojo **side by side**, the violet dome against the curved wooden roof — the contrast this set is built on | 524 KB |
+| `region-maps/kanto-saffron-city-map-gates.jpg` | The north gate: the wall, the gatehouse over the road out, the townhouses and lanes below it | 695 KB |
+
+### Region view — 1 of 2
+
+| File | Shows | Saffron ringed at |
+|---|---|---|
+| `region/kanto-saffron-city.jpg` | The Kanto landmass with the walled city sitting dead centre where four roads meet — the ring lands on the city itself | `703, 373`, r 172 × 138 |
+
+The second, `region/kanto-map-saffron-city.jpg` (a flat schematic), is **not done**: that generation failed and the turn's image budget was already spent. It is the only file missing from the set. Both installed files of these names in `assets/saffron-city/region/` predate the set and would be replaced by this pair.
+
 ### Review
 
 | File | Shows |
@@ -115,14 +143,16 @@ Both are empty of figures — the trainer sprites and the opponent are drawn ove
 | `review/_sheet.jpg` | Batch 1 contact sheet — the 10 town scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 10 portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 8 portraits and both battlefields |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — 4 area maps, 1 region view, 4 story beats |
+| `_saffron-city-labeled-reference.jpg` | The map side of the set at a glance, captioned, with the ring coordinate printed |
 
 ---
 
-## Still to come (batch 4, ~10 assets)
+## The one file outstanding
 
-| Contents | Count |
-|---|---|
-| Story beats — the takeover of the tower, the warp-tile hall, the Dojo's gift, the Marsh Badge — plus 4 area maps, the Kanto region overview and the labelled reference sheet | ~10 |
+`region/kanto-map-saffron-city.jpg` — the flat schematic Kanto map, the companion to `region/kanto-saffron-city.jpg`. Generation failed and the turn's ten-image budget was already used, so it is held over rather than faked. Everything else in the set is here.
+
+---
 
 ---
 
@@ -168,6 +198,6 @@ The ten portraits need their own entries in `people.PEOPLE`, plus a line each in
 
 ## Install — proposal only, nothing applied yet
 
-Under `assets/<location>/<category>/<file>` this batch goes to `assets/saffron-city/town/`. Later batches go to `people/`, `battle/bg/`, `story/`, `region-maps/` and `region/`.
+Under `assets/<location>/<category>/<file>`: town scenes to `assets/saffron-city/town/`, portraits to `people/`, both battlefields to `battle/bg/`, story beats to `story/`, area maps to `region-maps/`, and the region view to `region/`.
 
 `_scene_url()` in `bot/plugins/town.py` needs the `kanto/` prefix on a scene key to serve it from this repo, and the existing entries are mixed — Pallet writes `"kanto/town/ash-home"`, Cerulean writes `"town/cerulean-center"`. Whichever way Saffron is wired, it should match how the prefix is being handled when that code lands.
