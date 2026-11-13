@@ -2,7 +2,7 @@
 
 Viridian Forest for PokéBot, in the **Pokémon Fire Ash** style.
 
-**22 of 23 — 22 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
+**23 of 23 — the set is complete.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
 
 **Nothing has been installed.** Every file stays in `requests/` for review — that is the current rule, and the install notes at the bottom are a proposal for later, not something applied.
 
@@ -126,16 +126,17 @@ This is a **standalone stylised base**, not a crop of the bot's real Kanto map: 
 |---|---|
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 7 story scenes + 3 area maps |
 | `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — the clearing, the deep-maze map, the region map |
+| `review/_viridian-forest-labeled-reference.jpg` | **The walking-order reference** — `1584 × 600`, the three area maps side by side with 8 numbered callouts and a legend, drawn in code (Jersey15) |
 
 ---
 
-## Still to come (1 asset)
+## Complete
 
-| Contents | Count |
-|---|---|
-| `review/_viridian-forest-labeled-reference.jpg` — the whole forest laid out in Fire Ash walking order with numbered callouts drawn in code | 1 |
+All 23 assets are in: 4 scenes, 1 battlefield, 4 portraits, 8 story beats, 4 area maps, 1 ringed region map, 1 labelled reference.
 
-The Iconic Pidgeotto clearing that was held back in batch 3 is now done, regenerated with dappled light instead of a rectangular shaft.
+The labelled reference is built **in code**, never generated: the three area maps placed side by side, eight numbered gold callouts with red dots on the exact spots, and a legend in Fire Ash's own walking order —
+
+1. South Gatehouse · 2. Antidote, west of the entrance · 3. Hidden Poké Ball, north-east corner of the glade · 4. Rick then Anthony on the path · 5. Iconic Pidgeotto, also reachable through the grass · 6. Doug guarding a Potion · 7. Samurai, last before the exit · 8. North exit onto Route 2.
 
 ---
 
