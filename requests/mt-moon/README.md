@@ -3,7 +3,7 @@
 Mt. Moon for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style, built to stand as its own
 **Extra** — a non-town special place with its own folder, the way Sea Cottage does.
 
-**19 of ~34 — batches 1 and 2: the cave and its people.** Everything here is staged for review; nothing is installed.
+**29 of ~34 — batches 1–3: the cave, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -60,7 +60,6 @@ Battle fields: `card.FIELDS` has **no cave key at all** — every trainer in her
 | `ex` | Route 4 Exit | `town/mt-moon-exit` | Daylight, and a stair down to the grass. |
 | `cr` | The Moon Shaft | `town/mt-moon-crater` | Moonlight falls all the way to the bottom of the mountain. |
 | `cy` | Crystal Chamber | `town/mt-moon-crystals` | The crystals light the water better than a lantern would. |
-| `sm` | The Researcher | `people/seymour` | A researcher counting something on his fingers. |
 
 ---
 
@@ -108,10 +107,46 @@ behind each figure. All six are redrawn here to the real spec — single figure,
 second body for the cave's Rocket presence; if she should fight, she needs a `Trainer(...)` in `trainers.py` on the
 new `mt-moon` location, otherwise she is a `Person` only.
 
+### Batch 3 — story, and the two battlefields
+
+`card.FIELDS` has **no cave key**, so every trainer in here currently fights on `kanto-route-3-mt-moon-and-route-4` —
+outdoor route art with a cave's trainers standing in it. Two files fix that.
+
+**Battlefields**, both 1376 × 768, empty of figures as always:
+
+| File | Proposed field key | Shows | Weight |
+|---|---|---|---|
+| `battle/bg/mt-moon-cave.jpg` | `mt-moon-cave` | The floor of a cave chamber: broad open dirt arena deliberately plain in the middle, boulders and rock shelves behind, two timber pit props, one moonbeam on the middle distance | 262 KB |
+| `battle/bg/mt-moon-crater.jpg` | `mt-moon-crater` | The moon shaft as an arena: flat ring of pale stone, tiered ledges stepping up behind, a ring of standing stones either side of a column of moonlight | 338 KB |
+
+Anchors for both, by the convention every other field uses: `(976, 392)` far — `(458, 648)` near, scale `1.0`.
+
+**Story beats** — six, and these are allowed to carry people, because a story frame is a frozen moment:
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/mt-moon-fossil-choice.jpg` | Miguel's claim | The shelf with both fossils lit brightest in the frame, a teenage boy in a white coat at the edge of it, arms spread wide, face turned away | 275 KB |
+| `story/mt-moon-rocket-fossil.jpg` | The Man in Black | A black-clad man crouched at the shelf with a torch held low, one glove flat on the stone, a canvas bag open and empty beside him | 343 KB |
+| `story/mt-moon-two-grunts.jpg` | Two of them | A broad man and a lean woman in black facing each other across a lantern in a propped passage, both in near-silhouette | 386 KB |
+| `story/mt-moon-collapse.jpg` | The rockfall | Rubble across the passage, dust rolling forward, a child in a straw hat crouched low with both arms over their head | 325 KB |
+| `story/mt-moon-crater-moonlight.jpg` | The shaft fully lit | Tiered ledges up to the opening, one huge column of moonlight on the slab, the ring of standing stones, dust suspended in the beam. Empty — the moment belongs to the place | 309 KB |
+| `story/mt-moon-exit-dawn.jpg` | Out | A ragged opening framing a pink-and-gold sky, sunrise raking the floor, one small backpacked figure walking out with a hand up against the glare | 404 KB |
+
+The dawn frame is the loudest in the set — the sky is deliberately hotter than anything else here, because it is the
+only warm light in a cold place. If it reads as too much beside the cave scenes, it is the first candidate for a re-roll.
+
+**One more portrait**, also in this batch:
+
+| File | Key | Design | Weight |
+|---|---|---|---|
+| `people/moon-gazer.jpg` | `moon-gazer` **new** | **Man of fifty-five**: thinning grey hair and beard, plaid blanket-coat over a wool sweater, brass lantern low in one hand, walking stick in the other. He is the one who climbs up for every full moon | 137 KB |
+
+Wiring: `"moon-gazer": "mt-moon"` in `PORTRAITS`, plus a `Person(...)`. Dialogue only.
+
 ### Note on the art already in `assets/mt-moon/`
 
-The two installed town scenes are 1280 × 796 as well. `town/mt-moon-fossils` is standing in for the fossil
-chamber in this set until batch 3 replaces it with a 1408 × 768 version; `town/mt-moon` is already replaced here.
+Both installed town scenes were 1280 × 796. Both are now replaced here at 1408 × 768: `town/mt-moon` is the main
+chamber, `town/mt-moon-fossils` is the fossil shelf, redrawn to match the rest of the set.
 
 ---
 
@@ -119,8 +154,7 @@ chamber in this set until batch 3 replaces it with a 1408 × 768 version; `town/
 
 | Batch | Contents | Count |
 |---|---|---|
-| 3 | A redrawn `mt-moon-fossils`, the Clefairy watcher portrait, story beats — the fossil choice, the Man in Black at the shelf, the moonlit shaft — and two cave battle fields for the new `card.FIELDS` keys | ~8 |
-| 4 | Area maps of each floor under `routeinfo/`, both region views with the ring on the mountain, the labelled reference | ~7 |
+| 4 | Area maps of each floor under `routeinfo/`, both region views with the ring on the mountain between Pewter and Cerulean, the labelled reference sheet | ~5 |
 
 ---
 
@@ -130,3 +164,4 @@ chamber in this set until batch 3 replaces it with a 1408 × 768 version; `town/
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the nine cave scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the nine portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — fossil shelf, moon gazer, six story beats, both battlefields |
