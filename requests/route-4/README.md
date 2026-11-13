@@ -2,7 +2,7 @@
 
 Route 4 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**28 of ~33 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
+**36 of 36 — the set is complete.** 10 place scenes, 10 portraits, 8 story beats, 2 battlefields, 4 route maps, 2 region views.
 
 ---
 
@@ -126,6 +126,26 @@ outdoor route art for a road that is really two different places. Splitting it:
 Anchors for both: `(976, 392)` far — `(458, 648)` near, scale `1.0`. If only one key is wanted, use the **east** one —
 that is where the trainers are, and the west half is mountain climbing rather than battling.
 
+### Batch 4 — the route maps and both region views
+
+**Route maps**, 1376 × 768 under `routeinfo/` — the category the installed `assets/route-4/routeinfo/route-4.jpg`
+already lives in, so the overview drops straight into place:
+
+| File | Shows | Weight |
+|---|---|---|
+| `routeinfo/route-4.jpg` | The whole route west to east: the climb with its boulders, the Center beside the road, the **cave mass filling the middle with a black opening on each face**, then the ledges falling east to the rooftops | 416 KB |
+| `routeinfo/route-4-west.jpg` | The western half: the road climbing through three ledge steps, rock shelves with gaps, boulder scatters, the Center on its footpath, the cave mouth at the top | 496 KB |
+| `routeinfo/route-4-east.jpg` | The eastern half: the cave mouth, six ledge steps down, the tutors' house with its swept yard, tall grass, the river and plank bridge along the bottom, the gateposts to the city | 547 KB |
+| `routeinfo/route-4-center.jpg` | A detail map of the roadside Center: the building on its stone footpath, bicycle, lamp post, bench, two rock shelves stepping across the road behind, the crag above | 662 KB |
+
+**Region views**, both ringed in code after checking where the mountain actually landed. The ring deliberately
+catches **both cave mouths** — that is the whole route:
+
+| File | Shows | Route 4 ringed at |
+|---|---|---|
+| `region/kanto-route-4.jpg` | The whole landmass: the mountain standing on the road between the western stone town and the eastern riverside city, a black cave mouth on each face, the descent east toward the city | `827, 163`, r 150 × 92 |
+| `region/kanto-map-route-4.jpg` | The flat schematic: the same mountain drawn as one peak with both mouths cut into it, ledge marks on the eastern stretch, the blue city beyond | `680, 187`, r 245 × 135 |
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -145,11 +165,16 @@ that is where the trainers are, and the west half is mountain climbing rather th
 
 ---
 
-## Still to come
+## The set is complete
 
-| Batch | Contents | Count |
+| Category | Count | Notes |
 |---|---|---|
-| 4 | Route maps (overview, west, east), both region views ringed, the labelled reference | ~5 |
+| Place scenes | 10 | `town/` — ten proposed building keys where the bot has one |
+| Portraits | 10 | the salesman, both tutors, the hilltop Lass, the girl, and five road regulars |
+| Story beats | 8 | the sale, the boulder, the drop, the demonstration, the hill, the night, the gate, the cave |
+| Battlefields | 2 | `kanto-route-4-west`, `kanto-route-4-east` — split from the joined road's shared backdrop |
+| Route maps | 4 | overview, west, east, Center detail |
+| Region views | 2 | landmass and schematic, both ringed across both cave mouths |
 
 ---
 
@@ -160,3 +185,5 @@ that is where the trainers are, and the west half is mountain climbing rather th
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — four route maps |
+| `_route-4-labeled-reference.jpg` | The map side of the set at a glance, captioned, both ring coordinates printed |
