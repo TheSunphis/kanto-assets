@@ -2,7 +2,7 @@
 
 Route 5 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**30 of ~35 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
+**35 of 35 — route closed.** Batches 1–4: the road, its people, the story beats, both battlefields, the three route maps and both ringed region views. Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -117,6 +117,31 @@ the one that matters today.
 
 ---
 
+### Batch 4 — route maps (3) and region views (2)
+
+Route 5 is short and its shape is the whole point of it: a wide green corridor with the city at each end, the
+Day Care on the left, the fenced meadow on the right, a stream across the middle and three ledges to fall down.
+Three maps carry that, in the same GBA register as the rest of the set.
+
+| File | Shows | Weight |
+|---|---|---|
+| `routeinfo/route-5.jpg` | The whole route vertically: the north gate and city roofs at the top, the long meadow road, the stream and its hump bridge, the fenced grass square, the south gatehouse at the bottom | 296 KB |
+| `routeinfo/route-5-north.jpg` | The northern half in detail — the town end, the stream crossing, the ledges, the Day Care with its garden plot | 834 KB |
+| `routeinfo/route-5-south-gate.jpg` | The southern end — the paved apron, the gatehouse with its arch and portcullis, the tunnel stair, the wall running away | 338 KB |
+
+Both region views are the standard Kanto landmass in frame with **empty sea in the corners**, no captions of any
+kind, ringed in the house colours (8 px `(120,84,26)` inside 5 px `(247,201,72)`):
+
+| File | Shows | Ring | Weight |
+|---|---|---|---|
+| `region/kanto-route-5.jpg` | The illustrated region view, the road between the riverside city and the walled one | centre `704,224`, radius 75 × 80 | 400 KB |
+| `region/kanto-map-route-5.jpg` | The flat schematic Kanto map, same position | centre `687,220`, radius 85 × 72 | 360 KB |
+
+The ring is deliberately small — of every route in Kanto, Route 5 covers the least ground. A labelled reference
+sheet, `_route-5-labeled-reference.jpg`, puts all five in one frame with the ring coordinates and captions.
+
+---
+
 ## Files — batch 1: place scenes (10)
 
 | File | Key | Shows | Weight |
@@ -134,14 +159,6 @@ the one that matters today.
 
 ---
 
-## Still to come
-
-| Batch | Contents | Count |
-|---|---|---|
-| 4 | Route maps, both region views ringed, the labelled reference | ~5 |
-
----
-
 ## Review
 
 | File | What |
@@ -149,3 +166,25 @@ the one that matters today.
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — three route maps and both ringed region views |
+
+---
+
+## Totals
+
+| Group | Count |
+|---|---|
+| Place scenes (`town/`) | 10 |
+| Portraits (`people/`) | 10 |
+| Story beats (`story/`) | 8 |
+| Battlefields (`battle/bg/`) | 2 |
+| Route maps (`routeinfo/`) | 3 |
+| Region views (`region/`) | 2 |
+| **Assets** | **35** |
+| Contact sheets (`review/`) | 4 |
+| Labelled reference | 1 |
+| This README | 1 |
+| **Files under `requests/route-5/`** | **41** |
+
+Route 5 is complete: every building, person, beat, battlefield and map the route needs to be playable as a place
+in the bot rather than a line of text. **Route closed.**
