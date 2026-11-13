@@ -2,7 +2,7 @@
 
 Viridian City for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**20 of 24 staged so far.** The remaining 4 are listed under *Still to come*.
+**24 of 24 — the set is complete.**
 Everything here is staged for review; nothing has been installed into the live asset folders.
 
 ---
@@ -66,19 +66,33 @@ the town scenes, so they read as the room you walked into.
 | `story/viridian-story-gym-closed.jpg` | `closed-gym` | The gym doors, chained and padlocked | 445 KB |
 | `story/viridian-story-team-of-three.jpg` | `team-of-three` | The chain coiled on the ground, one door ajar with light spilling out | 492 KB |
 
+### 4. Maps — 2
+
+| File | Dimensions | Shows | Weight |
+|---|---|---|---|
+| `town/viridian-town-map.jpg` | `1584 × 672` | The whole town as a map sheet: crossroads, all six buildings, the pond, the north gate | 467 KB |
+| `region/kanto-viridian-city.jpg` | `1376 × 768` | Central Kanto with Viridian ringed in gold — Pewter north beyond the forest, Pallet south on its cape | 459 KB |
+
+### 5. Battlefield — 1
+
+| File | Dimensions | Shows | Weight |
+|---|---|---|---|
+| `battle/kanto-viridian-gym.jpg` | `1376 × 768` | The gym's arena floor, columns and hanging banner | 247 KB |
+
+### 6. Reference (not installable)
+
+| File | Purpose |
+|---|---|
+| `review/_viridian-city-labeled-reference.jpg` | The town sheet with all six locations numbered, for orientation only |
+
 ---
 
-## Still to come — the other 4
+## Note on the region map
 
-| Group | # | Files |
-|---|---|---|
-| Maps | 2 | `kanto-viridian-city.jpg` (region overview), `viridian-town-map.jpg` (town sheet) |
-| Battlefield | 1 | `kanto-viridian-gym.jpg` — the gym field, for when the gym opens |
-| Reference | 1 | `_viridian-city-labeled-reference.jpg`, not installable |
-
-Both maps need artwork that does not exist yet, which is why they are last: the region overview needs
-a Kanto base map (the previous region set was deleted in `c92f24c`) and the town sheet is the source
-the labelled reference is cropped from, so the two ship together.
+`region/kanto-viridian-city.jpg` was drawn fresh because the previous Kanto region set was deleted
+from this repo in `c92f24c`. It is framed on Viridian at the centre of the image rather than being a
+crop of a full Kanto map, so the gold ring is part of the artwork, not an overlay a caller applies —
+if a full region map comes back later, replace this file and re-ring it at the right coordinates.
 
 ---
 
@@ -108,6 +122,14 @@ picture="kanto/story/viridian-story-team-of-three", # on team-of-three
 
 # card.py — the gym has no field registered yet; battles there would fall back to "grass"
 FIELDS["kanto-viridian-gym"] = (976, 392, 458, 648)
+
+# region.py — the region picture is keyed by place name
+def _kanto_picture(picture):
+    if picture == "viridian-city":
+        return kanto_asset("region", "kanto-viridian-city.jpg")
+
+# town.py / region.py — the town sheet, if it is wired as the town view
+kanto_asset("town", "viridian-town-map.jpg")
 ```
 
 `viridian-gym` is reachable only once `team-of-three` is done, and `trainers.py` currently lists **no
