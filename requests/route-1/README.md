@@ -2,8 +2,11 @@
 
 Kanto Route 1 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**36 files staged** — 35 installable assets plus one labelled reference. Everything here is staged
-for review; nothing has been installed into the live asset folders.
+**Installation complete (2026-11-11):** all 35 installable assets were moved to `assets/route-1/`
+and byte-verified at commit `9a27e359bb787f60afb8b1d2c329ab775a3a515e`. The review-only
+`_route-1-labeled-reference.jpg` remains in this request folder. The tables below preserve the
+original request inventory and install paths; they do not imply that the images remain under
+`requests/route-1/`.
 
 ---
 
