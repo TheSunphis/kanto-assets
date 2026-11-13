@@ -16,7 +16,7 @@ Scene images are backgrounds/art only: dialogue, quest text, buttons, and UI are
 
 | Path | Intended use | Status |
 |---|---|---|
-| `assets/region/kanto-pallet-town.jpg` | Existing `/region` map source | Reworked in place to show Oak’s Corral beside the Lab; original map geography and existing labels preserved |
+| `assets/region/kanto-pallet-town.jpg` | Existing `/region` map source | Reworked in place to show Oak’s Corral behind the Lab; original map geography and existing labels preserved |
 | `assets/town/ash-home.jpg` | Ash’s Home scene | Used by Ash’s Home; one home location |
 | `assets/town/oak-corral.jpg` | Oak’s Corral/Pasture | Used by the Pallet Town scene |
 | `assets/town/rival-house.jpg` | Rival’s House scene | Used by the Pallet Town scene |
