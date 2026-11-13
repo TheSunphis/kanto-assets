@@ -2,7 +2,7 @@
 
 Route 5 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**10 of ~31 — batch 1: the road.** Everything here is staged for review; nothing is installed.
+**20 of ~31 — batches 1 and 2: the road and its people.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -60,6 +60,36 @@ way to reach either.
 | `br` | The Stream | `town/route-5-stream` | Clear water over pebbles, a hump-backed bridge, and a willow in the way. |
 | `vb` | The Climb Back | `town/route-5-view-back` | Looking up the hill from the bottom: ledges, fences, one orange roof, and the city on the skyline. |
 
+### Batch 2 — the people (10)
+
+Route 5 has no trainers, so none of these people want a battle. They are the route's furniture: the two who look after
+Pokémon, the one who won't let you into the city, and seven people simply living on a road between two cities.
+
+| File | Key | Role | Design | Weight |
+|---|---|---|---|---|
+| `people/daycare-man.jpg` | `daycare-man` | Takes a Pokémon for **₽100, then ₽100 a level** | **Man of seventy**: stooped, bald with white sideburns, round spectacles, pencil behind one ear, brown cardigan, long work apron, carpet slippers, one hand waving | 106 KB |
+| `people/daycare-lady.jpg` | `daycare-lady` | His wife; the house, and the tea | **Woman of sixty-eight**: round and bustling, grey bun under a green headscarf, pale blue house dress, white apron, knitted shawl, tea towel over one arm | 139 KB |
+| `people/gate-guard.jpg` | `gate-guard` | **Won't open the gate** without the Tea | **Man of forty-two**: solid and square, moustache, slate-blue uniform coat with brass buttons and white piping, white gloves, peaked cap with a **blank** badge, clipboard out, palm raised to refuse | 105 KB |
+| `people/tunnel-walker.jpg` | `tunnel-walker` | Uses the Underground Path daily | **Woman of thirty-five**: brisk, dark curly hair pinned up, spectacles pushed back on her head, mustard raincoat, muddy boots, shopping bag, an **unlit** brass lantern held up | 120 KB |
+| `people/tunnel-lamplighter.jpg` | `tunnel-lamplighter` | Lights the tunnel lamps | **Man of sixty**: wiry, long white beard tucked into his coat, cloth cap, soot on one cheek, dark green work coat, fingerless gloves, a long brass lighter pole with a live flame | 141 KB |
+| `people/route5-jogger.jpg` | `route5-jogger` | Out of breath on the hill | **Man of forty-eight**: soft around the middle, flushed, towel round his neck, hands on his knees, rueful grin, faded red tracksuit top | 139 KB |
+| `people/route5-gardener.jpg` | `route5-gardener` | Tends the hedges by the gate | **Man of fifty-five**: weathered, flat cap, green canvas waistcoat with many pockets, striped apron, rubber clogs, hedge shears closed in one hand | 160 KB |
+| `people/fence-child.jpg` | `fence-child` | Watches the tall grass and hopes | **Boy of nine**, child proportions: skinny, skinned knees, hair in tufts, oversized jumper with the sleeves over his hands, one sock up and one down, red wellingtons, leaning on his toes | 103 KB |
+| `people/route5-courier.jpg` | `route5-courier` | Runs the city deliveries | **Woman of twenty-two**: teal cropped hair under a backwards cycling cap, cropped navy windbreaker, padded shorts, bulky delivery satchel, one hand on her bicycle's handlebars | 189 KB |
+| `people/route5-picnicker.jpg` | `route5-picnicker` | Eating lunch in the meadow | **Man of thirty**: broad and cheerful, curly hair and a short beard, lilac shirt, sandals with socks, tartan blanket under one arm and a basket in the other, straw hat pushed back | 134 KB |
+
+**Wiring** — ten `Person(...)` and ten `PORTRAITS` lines at `"kanto-route-5"`:
+
+```python
+"daycare-man": "kanto-route-5", "daycare-lady": "kanto-route-5", "gate-guard": "kanto-route-5",
+"tunnel-walker": "kanto-route-5", "tunnel-lamplighter": "kanto-route-5", "route5-jogger": "kanto-route-5",
+"route5-gardener": "kanto-route-5", "fence-child": "kanto-route-5", "route5-courier": "kanto-route-5",
+"route5-picnicker": "kanto-route-5",
+```
+
+None of them needs a `Trainer(...)` entry — that is the point of this route. `daycare-man` needs the Day Care service
+hook (₽100 to leave, ₽100 a level to collect) and `gate-guard` needs the gate's `requires` gated on the Tea.
+
 ---
 
 ## Files — batch 1: place scenes (10)
@@ -83,9 +113,8 @@ way to reach either.
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | Portraits — the Day Care man, his wife, the gate guard, a tunnel walker, a picnicker, a jogger, a gardener, a child at the fence | ~8 |
-| 3 | Story beats — the ₽100 deal, collecting a levelled Pokémon, the guard's refusal, the Tea, the walk down — plus **both battle fields, including the missing `kanto-route-5`** | ~7 |
-| 4 | Route maps, both region views ringed, the labelled reference | ~6 |
+| 3 | Story beats — the ₽100 deal, collecting a levelled Pokémon, the guard's refusal, the walk down, the tunnel lit — plus **both battle fields, including the missing `kanto-route-5`** | ~7 |
+| 4 | Route maps, both region views ringed, the labelled reference | ~5 |
 
 ---
 
@@ -94,3 +123,4 @@ way to reach either.
 | File | What |
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
