@@ -5,7 +5,7 @@
 That means battle art lives with its location, not in a shared pool:
 
 ```
-assets/<location>/battle/<field-key>.jpg      e.g. assets/viridian-forest/battle/kanto-viridian-forest.jpg
+assets/<location>/battle/bg/<field-key>.jpg   e.g. assets/viridian-forest/battle/bg/kanto-viridian-forest.jpg
 ```
 
 `card.py` looks a picture up by **field key** — `FIELDS` in `bot/card.py` holds the sprite-anchor coordinates and the key doubles as the file name. So the file name must be the field key, exactly.

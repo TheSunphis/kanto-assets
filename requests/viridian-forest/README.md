@@ -153,7 +153,7 @@ The labelled reference is built **in code**, never generated: the three area map
 | `region-maps/*.jpg` | `assets/viridian-forest/region/` | the four area maps, review-only until a page fetches them |
 | `battle/bg/*.jpg` | `assets/viridian-forest/battle/` | `kanto-viridian-forest` — location-unique, see [`BATTLE_ART.md`](../BATTLE_ART.md) |
 
-**Battles are location-unique** — no location borrows another's battlefield. So this one installs to `assets/viridian-forest/battle/kanto-viridian-forest.jpg`, and `49b2987`'s removal of the per-location `battle/` folders needs reversing for battles. Full picture, including every field key and what art is missing: [`requests/BATTLE_ART.md`](../BATTLE_ART.md). `card.FIELDS` also needs a `kanto-viridian-forest` entry before this can be drawn.
+**Battles are location-unique** — no location borrows another's battlefield. So this one installs to `assets/viridian-forest/battle/bg/kanto-viridian-forest.jpg`, and `49b2987`'s removal of the per-location `battle/` folders needs reversing for battles. Full picture, including every field key and what art is missing: [`requests/BATTLE_ART.md`](../BATTLE_ART.md). `card.FIELDS` also needs a `kanto-viridian-forest` entry before this can be drawn.
 
 Then the code:
 

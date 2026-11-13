@@ -199,7 +199,7 @@ Everything in `requests/pewter-city/`:
 
 ## Install — proposal only, nothing applied yet
 
-Per the current rule this set stays in `requests/`. When it does get installed, the layout is `assets/<location>/<category>/<file>`, so these go to `assets/pewter-city/town/`, portraits to `assets/pewter-city/people/`, and the gym battlefield to `assets/pewter-city/battle/pewter-gym.jpg`.
+Per the current rule this set stays in `requests/`. When it does get installed, the layout is `assets/<location>/<category>/<file>`, so these go to `assets/pewter-city/town/`, portraits to `assets/pewter-city/people/`, and the gym battlefield to `assets/pewter-city/battle/bg/pewter-gym.jpg`.
 
 Two code facts worth knowing before that day:
 

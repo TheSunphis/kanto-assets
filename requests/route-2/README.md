@@ -105,7 +105,7 @@ The one registered key plus two location-unique variants:
 |---|---|
 | `town/*.jpg` | `assets/route-2/town/` |
 | `people/*.jpg` | `assets/route-2/people/` |
-| `battle/bg/*.jpg` | `assets/route-2/battle/` — battles are **location-unique**, no borrowing, so they live with the road. See [`BATTLE_ART.md`](../BATTLE_ART.md) |
+| `battle/bg/*.jpg` | `assets/route-2/battle/bg/` — battles are **location-unique**, no borrowing, so they live with the road. See [`BATTLE_ART.md`](../BATTLE_ART.md) |
 
 Then the code:
 
