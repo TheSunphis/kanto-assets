@@ -2,7 +2,7 @@
 
 Vermilion City for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**10 of ~40 — batch 1: the city.** Everything here is staged for review; nothing is installed.
+**20 of ~40 — batches 1 and 2: the city and its people.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -23,6 +23,23 @@ Vermilion City for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) 
 Each Kanto set so far has been built on one material. Pewter is stone. Cerulean is water. Saffron is height and
 walls. **Vermilion is iron over salt water**: corrugated sheds, cranes, rope, brass lamps, navy roofs, and paint
 that has been repainted badly over rust. It is a working port, not a resort.
+
+### Fire Ash, not FireRed
+
+The cast here follows **Pokémon Fire Ash**, which means the anime's Vermilion rather than the cartridge's. That
+changes who is standing where, and it is worth writing down because several of these people do not exist in FRLG:
+
+| Fire Ash | What it means for this set |
+|---|---|
+| **Brock stands in front of the Gym** and will not move until you beat him | Brock's Pewter portrait is reused as-is — no redraw — but he needs a `Person` entry located *here* as well |
+| Gym trainers are **Sailor Dwayne** and **Gentleman Tucker**, both Electric users | two named portraits instead of the anonymous `sailor` / `gentleman` class sprites |
+| The Fan Club president **blathers about his Fearow** and hands over a Bicycle | `fan-club-president` |
+| After Surge, a **lady in the Fan Club gives out a Light Ball** | `fan-club-lady` |
+| The **Fishing Guru** gives the Old Rod | `fishing-guru` |
+| The **S.S. Anne** must be boarded — you need both Misty's and Surge's badges | `ss-anne-captain`, and the harbour building |
+| A **tall building in the centre** with a receptionist, TM90 and a Master Ball | **Cerise Laboratory** — not in FRLG, and its scene is coming in batch 4 |
+| **Ritchie waits at the docks** in the post-game | `ritchie`, staged in batch 3 |
+| **Jessie and James** turn up at Bill's Lighthouse north of the city | story beat in batch 3 — and `st-anne`
 
 ---
 
@@ -61,6 +78,35 @@ beyond scenery.
 | `mk` | Fish Market | `town/vermilion-market` | Four stalls, crushed ice, brass scales. | fishmonger |
 | `wh` | Warehouse Row | `town/vermilion-warehouses` | Corrugated sheds, loading bays, a hand hoist. | dock worker |
 | `sq` | Harbour Square | `town/vermilion-square` | An old anchor on a plinth, a bandstand, benches facing the water. | — |
+| `cl` | Cerise Laboratory | `town/vermilion-cerise-lab` *(batch 4)* | A tall glass-and-steel building in the middle of the city. A receptionist hands out TM90 to visitors. | receptionist |
+
+### Batch 2 — the people (10)
+
+| File | Key | Fire Ash role | Design | Weight |
+|---|---|---|---|---|
+| `people/lt-surge.jpg` | `lt-surge` | Gym Leader, **one-on-one against his Raichu** | **Man of thirty-five**: very tall and heavily muscled, tanned, spiky pale-blond crew cut, olive tank top, camo trousers, fingerless gloves, two plain dog tags, arms folded | 121 KB |
+| `people/sailor-dwayne.jpg` | `sailor-dwayne` | Gym trainer | **Man of twenty-six**: sunburnt, stubble, open grin, white sailor uniform with a striped navy collar, white cap | 117 KB |
+| `people/gentleman-tucker.jpg` | `gentleman-tucker` | Gym trainer | **Man of sixty-five**: silver hair, white moustache, monocle on a chain, burgundy three-piece suit, cravat, gold watch chain, cane | 100 KB |
+| `people/fan-club-president.jpg` | `fan-club-president` | Blathers about his **Fearow**, gives the Bicycle | **Man of seventy**: round-bellied, nearly bald, lavender cardigan, maroon bow tie, hands behind his back, leaning back to start a long story | 106 KB |
+| `people/fan-club-lady.jpg` | `fan-club-lady` | Hands out a **Light Ball** after Surge | **Woman of forty-five**: comfortably built, auburn wave, pink floral blouse, pearls, green cardigan over the shoulders, handbag | 114 KB |
+| `people/fishing-guru.jpg` | `fishing-guru` | Gives the **Old Rod** | **Man of sixty-five**: leathery and weathered, white beard, floppy bucket hat, many-pocketed fishing vest over a striped jumper, bamboo rod held like a staff | 141 KB |
+| `people/vermilion-nurse.jpg` | `vermilion-nurse` | Center | **Woman of thirty**: pink hair in two flat loops, white cap with a plain red band and **no cross**, pink apron, hands folded | 107 KB |
+| `people/vermilion-clerk.jpg` | `vermilion-clerk` | Mart | **Man of twenty-one**: navy tabard apron, blank name badge, carrying a stack of plain boxes | 89 KB |
+| `people/ss-anne-captain.jpg` | `ss-anne-captain` | **Seasick**, gives Cut | **Man of fifty-five**: portly, green about the gills, white beard, navy double-breasted coat with brass buttons, peaked cap with a blank badge, one hand on his stomach | 117 KB |
+| `people/cerise-receptionist.jpg` | `cerise-receptionist` | The tall building in the centre — TM90 and a Master Ball | **Woman of twenty-six**: tight bun, rectangular glasses, teal blazer, blank lanyard card, clipboard | 88 KB |
+
+**Wiring** — ten `Person(...)` entries and ten `PORTRAITS` lines, all pointed at `"vermilion-city"`:
+
+```python
+"lt-surge": "vermilion-city", "sailor-dwayne": "vermilion-city", "gentleman-tucker": "vermilion-city",
+"fan-club-president": "vermilion-city", "fan-club-lady": "vermilion-city", "fishing-guru": "vermilion-city",
+"vermilion-nurse": "vermilion-city", "vermilion-clerk": "vermilion-city",
+"ss-anne-captain": "vermilion-city", "cerise-receptionist": "vermilion-city",
+```
+
+`lt-surge` needs a `Trainer(...)` in `trainers.py` as the Gym Leader with the Raichu, and `sailor-dwayne` /
+`gentleman-tucker` as his two Gym trainers. `fan-club-president`, `fan-club-lady`, `fishing-guru`,
+`cerise-receptionist` are dialogue only.
 
 ---
 
@@ -94,14 +140,8 @@ Notes on three of them:
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | Portraits — Lt. Surge, the nurse, the clerk, the Fan Club chairman and member, the Fishing Guru, a sailor, the harbour master, a dock worker, the lighthouse keeper | ~10 |
-| 3 | Story beats — the ferry at dawn, the parked bike, the gym door, the Fan Club's favourite — plus `vermilion-gym` and harbour battle fields | ~8 |
-| 4 | Area maps of the quays and the city, both region views ringed, the labelled reference | ~10 |
-
-**One cross-set note:** the `fan-club-chairman` portrait already staged in
-[`requests/saffron-city/`](../saffron-city/) is canonically a **Vermilion** character — the Pokémon Fan Club is
-here, not in Saffron. Batch 2 draws the chairman for this set properly. The Saffron file can be dropped, or kept as
-a second face for a Saffron club, but it should not ship as Saffron's only chairman.
+| 3 | Story beats — boarding the S.S. Anne, the seasick captain, the tree in front of the Gym, the switches in the trash cans, the Fan Club audience, Ritchie at the docks, Jessie and James at Bill's Lighthouse — plus `vermilion-gym` and `vermilion-harbour` battle fields | ~10 |
+| 4 | `town/vermilion-cerise-lab` and a school scene, four area maps, both region views ringed, the labelled reference | ~10 |
 
 ---
 
@@ -110,3 +150,4 @@ a second face for a Saffron club, but it should not ship as Saffron's only chair
 | File | What |
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten city scenes |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
