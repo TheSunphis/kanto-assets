@@ -2,7 +2,7 @@
 
 Viridian Forest for PokéBot, in the **Pokémon Fire Ash** style.
 
-**19 of 23 — 19 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
+**22 of 23 — 22 assets staged.** The road it sits inside has its own set: **[`requests/route-2/`](../route-2/)**.
 
 ---
 
@@ -84,15 +84,16 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 | `people/bug-catcher-doug.jpg` | `bug-catcher-doug` | Fourteen and lanky, headband instead of a cap, jar bag at the hip | 123 KB |
 | `people/bug-catcher-samurai.jpg` | `bug-catcher-samurai` | The anime Samurai Fire Ash names him after: indigo kimono, grey hakama, topknot, headband, wooden sword, net | 141 KB |
 
-### 4. Area maps — 3
+### 4. Area maps — 4
 
 | File | Shows | Weight |
 |---|---|---|
 | `region-maps/kanto-viridian-forest-map-south.jpg` | The southern entrance glade in map scale: gate at the bottom, clearing, paths splitting north, canopy packed around it | 892 KB |
 | `region-maps/kanto-viridian-forest-map-centre.jpg` | The maze heart: the trail forking and doubling back through dense canopy, one clearing off to the right | 878 KB |
 | `region-maps/kanto-viridian-forest-map-north.jpg` | The forest edge breaking into bright Route 2 meadow, path out through the gap, grey stone ridge beyond | 492 KB |
+| `region-maps/kanto-viridian-forest-map-deep.jpg` | The deepest, gloomiest canopy: one trail twisting through it in switchbacks, a dead-end stub, one hidden pocket clearing | 711 KB |
 
-### 5. Story scenes — 7
+### 5. Story scenes — 8
 
 Backdrops for the talk/quest screens, in Fire Ash's own walkthrough order. No creatures in frame — the Pokémon and items are drawn by `card.py`.
 
@@ -102,26 +103,37 @@ Backdrops for the talk/quest screens, in Fire Ash's own walkthrough order. No cr
 | `story/…-antidote.jpg` | Antidote west of the entrance | A tin lying half-open in the trampled grass at the glade's edge | 695 KB |
 | `story/…-ball.jpg` | Hidden Poké Ball, north-east corner of the glade | Gnarled root base, a red-and-white ball tucked in the gap, one shaft of light | 842 KB |
 | `story/…-path.jpg` | The grass-less path, where two Bug Catchers wait | Narrow packed trail hemmed by walls of tall grass, bending left out of sight | 741 KB |
+| `story/…-clearing.jpg` | The grassy side-clearing where the Iconic Pidgeotto waits: turf ringed by tall grass, one low branch, loose feathers and a twig nest on the ground, dappled light | 609 KB |
 | `story/…-potion.jpg` | The Potion the third Bug Catcher guards | Fallen mossy log, dark hollow beneath it, a small bottle tucked in the dry earth | 571 KB |
 | `story/…-exit.jpg` | The last stretch to the northern exit | Dim trunks crowding the foreground, the path running out into a glowing opening | 640 KB |
 | `story/…-stump.jpg` | `forest-first-aid` — the supply stump | Hollow stump with tin and cloth, crate and lantern; one beam of late light, everything else in shade | 604 KB |
 
-### 6. Review
+### 6. Region map — 1
+
+| File | Dimension | Shows | Weight |
+|---|---|---|---|
+| `region/kanto-viridian-forest.jpg` | `1376 × 768` | Kanto overview with the gold ring drawn on the forest between Viridian City and the town north of it | 533 KB |
+
+The ring is **drawn in code** after eye-checking the output, never requested from the model — the first attempt at a ring in this project landed a whole town away from its target. Two strokes, dark `(120,84,26)` under gold `(247,201,72)`, centred `(418, 356)` with radii `88 × 76`.
+
+This is a **standalone stylised base**, not a crop of the bot's real Kanto map: the old Kanto set was deleted in `c92f24c`, so there was no base to ring. Swap it for a real base and re-ring when one returns to the repo.
+
+### 7. Review
 
 | File | Shows |
 |---|---|
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 7 story scenes + 3 area maps |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — the clearing, the deep-maze map, the region map |
 
 ---
 
-## Still to come (4 assets)
+## Still to come (1 asset)
 
 | Contents | Count |
 |---|---|
-| `story/viridian-forest-story-clearing.jpg` — the grassy side-clearing where the Iconic Pidgeotto waits. **Held back:** the first attempt baked a hard-edged rectangle into the light shaft across the middle of the frame, so it was not shipped and needs regenerating | 1 |
-| Deep-maze area map | 1 |
-| Region overview with the forest ringed | 1 |
-| Labelled reference sheet with the Fire Ash route order | 1 |
+| `review/_viridian-forest-labeled-reference.jpg` — the whole forest laid out in Fire Ash walking order with numbered callouts drawn in code | 1 |
+
+The Iconic Pidgeotto clearing that was held back in batch 3 is now done, regenerated with dappled light instead of a rectangular shaft.
 
 ---
 
