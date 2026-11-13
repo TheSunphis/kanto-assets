@@ -2,7 +2,7 @@
 
 Cerulean City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**19 of ~40 — batches 1 and 2: the city, both battlefields, and 9 of the 15 portraits.** Nothing is installed; every file stays in `requests/`.
+**29 of ~40 — batches 1–3: the city, both battlefields, all 15 portraits, and four story beats.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -63,7 +63,8 @@ So the honest split of this request:
 - **The two battlefields are the real gap.** `cerulean-gym` and `nugget-bridge` had no art in `assets/` or in `requests/`, while nine trainers fight on them.
 - **The 5 town scenes here replace installed ones** — same filenames, art matched to the other Kanto sets.
 - **The 9 portraits here replace installed ones** — same keys, so they drop straight in.
-- **Six portraits had no counterpart in this batch and are still unbuilt here:** `bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan`, plus `bike-owner`, whose generation failed outright this batch. All seven already exist in `assets/`, so they are optional replacements rather than gaps.
+- **All 15 portraits are now here** — batch 3 closed the six gaps (`bike-owner`, `bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan`) plus `bill`, which was the only portrait with no installed counterpart.
+- **Story art is banked, not wired.** `Quest` has no `picture` field, so these four are for the point where story scenes get a place to live.
 
 ---
 
@@ -96,7 +97,7 @@ So the honest split of this request:
 
 Five drop onto existing building keys with no code change. Three are extra scenes and need one `Building(...)` entry each.
 
-### Portraits — 9 of 15
+### Portraits — all 15
 
 Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the bottom, 2 px grid, 48 colours. Every one of these **replaces** the same-named file already in `assets/cerulean-city/people/`.
 
@@ -112,7 +113,31 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 | `people/picnicker-diana.jpg` | `picnicker-diana` | Fifteen, braids under a wide straw hat with a ribbon, green sleeveless top, orange skirt, wicker basket, checkered blanket | 134 KB |
 | `people/bridge-rocket.jpg` | `bridge-rocket` — Team Rocket | Early twenties, black peaked cap and jacket with a plain red circle emblem, boots and gloves, satchel strap, smug | 84 KB |
 
-`bike-owner` **failed to generate** this batch — no retry was possible inside the turn's generation budget. It already exists in `assets/cerulean-city/people/`, so nothing is broken; a replacement is still wanted.
+#### Batch 3 — the remaining six
+
+Same spec, same cream, same 726 px. These had no counterpart in `requests/` before; all six already exist in `assets/cerulean-city/people/`, so they are replacements.
+
+| File | `people.PERSON` key | Design | Weight |
+|---|---|---|---|
+| `people/bike-owner.jpg` | `bike-owner` — Bike Shop | **Adult**, stocky and mid-forties, receding dark hair and a thick moustache, red-and-white cycling cap, shop polo under a heavy leather mechanic's apron, work boots, wrench and oil rag | 116 KB |
+| `people/bug-catcher-cale.jpg` | `bug-catcher-cale` | Fifteen, wide flat straw hat over messy green hair, green shirt, tan cargo shorts and knee socks, butterfly net upright, leather satchel | 139 KB |
+| `people/lass-ali.jpg` | `lass-ali` | Ten, chin-length brown hair with two red clips, pink dress with white rounded collar and chest bow, red Mary Janes, hands clasped hopefully | 108 KB |
+| `people/youngster-timmy.jpg` | `youngster-timmy` | Ten, backwards yellow-and-black cap, blue-and-white striped tee, hands in pockets, chin-up cocky challenge | 109 KB |
+| `people/lass-reli.jpg` | `lass-reli` | Eleven, blonde pigtails with green ribbons, green dress over a white pincushion-hem pinafore, one hand raised in a wave | 124 KB |
+| `people/camper-ethan.jpg` | `camper-ethan` | Eleven, red bandana headband, green vest over a cream shirt, backpack with a strapped bedroll, hands on the straps | 128 KB |
+
+The child trainers are deliberately small next to `bike-owner`, `cerulean-guide` and the other adults — the size difference is the point.
+
+### Story beats — 4, banked until `Quest` grows a picture field
+
+1408 × 768, 64 colours, no characters in the two bridge pieces beyond the figures named (Pokémon are drawn by `card.py` at runtime):
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/nugget-bridge-gauntlet.jpg` | The five in a row | Five young trainers staged at intervals up the length of the arched timber footbridge, all facing the near end — the gauntlet, read as a shape | 769 KB |
+| `story/nugget-bridge-rocket.jpg` | The Rocket at the far end | A lone Rocket in black, arms folded square across the deck at sunset, red circle emblem, plainly blocking the way off | 702 KB |
+| `story/cerulean-gym-pool.jpg` | The arena before Misty | Tiled deck, vast turquoise pool, rafts and a diving board, glass tank walls, empty spectator benches | 689 KB |
+| `story/bill-cottage-machine.jpg` | Bill's machine | The humming glass-cored cylinder, cables across the floorboards, a desk of monitors showing only abstract glow, night sea in the round window | 497 KB |
 
 ### Review
 
@@ -120,15 +145,15 @@ Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the botto
 |---|---|
 | `review/_sheet.jpg` | Batch 1 contact sheet — 8 town scenes, 2 battlefields |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the 9 new portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — 6 portraits and 4 story beats |
 
 ---
 
-## Still to come (batches 3–4, ~14 assets)
+## Still to come (batch 4, ~10 assets)
 
-| Batch | Contents | Count |
-|---|---|---|
-| 3 | `bike-owner` retry, the five remaining bridge/gym trainers (`bug-catcher-cale`, `lass-ali`, `youngster-timmy`, `lass-reli`, `camper-ethan`), and story beats for the Nugget Bridge gauntlet and the Rocket at the far end | 10 |
-| 4 | Misty and the Cascade Badge, Bill's machine, the canal scenes; area maps (city, Nugget Bridge, gym quarter, cave path), region map, labelled reference | ~10 |
+| Contents | Count |
+|---|---|
+| Misty waiting at the pool edge, the Cascade Badge, two canal scenes; then the area maps (city, Nugget Bridge, gym quarter, cave path), the Kanto region overview, and the labelled reference sheet | ~10 |
 
 ---
 
