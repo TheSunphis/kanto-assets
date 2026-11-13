@@ -2,7 +2,7 @@
 
 Pewter City for PokéBot, in the **Pokémon Fire Ash** style.
 
-**10 of ~32 — batch 1 of 4: the town itself.** Nothing is installed; every file stays in `requests/`.
+**18 of ~32 — batches 1 and 2: the town, the gym battlefield and five of seven portraits.** Nothing is installed; every file stays in `requests/`.
 
 ---
 
@@ -74,20 +74,51 @@ Everything else follows the city's own character: grey-brown stone blocks, slate
 
 Five files drop straight onto the existing building keys with no code change. The other five are extra scenes — the city gates, the street, the north-west corner and the museum hall — and each needs one new `Building(...)` entry if you want it reachable.
 
+## Files — batch 2: the battlefield and portraits
+
+### The gym battlefield — 1
+
+| File | Field key | Weight |
+|---|---|---|
+| `battle/bg/pewter-gym.jpg` | **`pewter-gym`** — fitted at `card.FIELDS["pewter-gym"]` = `(976, 392, 458, 648)`, scale 1.0 | 336 KB |
+
+This is the one registered battle key in the whole bot that had **no picture anywhere** since `49b2987` deleted it. Camper Liam and Brock both fight here, so until this file exists their battles are drawn on the generic `grass` fallback. The art is Fire Ash's own description of the Gym: a Japanese rock garden inside — raked pale gravel, three mossy boulders, a stone lantern, and the raised stone pedestal at the back, with the two battler spaces kept clear of clutter.
+
+### Portraits — 5 of 7
+
+Full-body sprites on flat cream `(244,245,227)`, 726 px tall, flush to the bottom, 2 px grid, 48 colours.
+
+| File | `people.PERSON` key | Design | Weight |
+|---|---|---|---|
+| `people/brock.jpg` | `brock` — Gym Leader | Sturdy teenager, darker tan skin, half-closed eyes, spiky dark brown hair, orange sleeveless vest over a tan shirt, brown cargo trousers, grey boots, rock badge on the chest | 109 KB |
+| `people/camper-liam.jpg` | `camper-liam` | Twelve, green shirt and brown shorts, red cap, bulky backpack with bedding rolled on top, dirt smudge, fist raised | 139 KB |
+| `people/curator.jpg` | `curator` — Museum Curator | Late fifties, grey hair and moustache, wire glasses, brown tweed, cream shirt and bow tie, holding a fossil fragment | 119 KB |
+| `people/pewter-guide.jpg` | `pewter-guide` — Gym Guide | Early thirties, grey buttoned shirt with name tag, clipboard in hand, explaining the Gym's rules | 94 KB |
+| `people/pewter-clerk.jpg` | `pewter-clerk` — Mart Clerk | Mid twenties, blue-and-white cap, blue shirt with white collar, white apron, price gun and parcels | 105 KB |
+
+**Two portraits held back, not shipped:** `gardener` came back as a labelled "GBA Sprite Concept / 64x64 Pixel Master" sheet with several figures and text drawn on it, and `pewter-nurse` came back as a coarse low-resolution block with dark artifacts instead of a clean 726 px sprite. Both need regenerating — they are still outstanding, like the Iconic Pidgeotto clearing was until batch 4 of the forest set.
+
+### Story beats — 2
+
+| File | Beat | Weight |
+|---|---|---|
+| `story/pewter-story-arrival.jpg` | `reach-pewter` — the road from Route 2 through the south gate towers into the grey city | 511 KB |
+| `story/pewter-story-badge.jpg` | `beat-brock` — the stone pedestal in the rock garden, the octagonal Boulder Badge in its case under one shaft of light | 475 KB |
+
 ### Review
 
 | File | Shows |
 |---|---|
-| `review/_sheet.jpg` | Contact sheet of all ten town scenes |
+| `review/_sheet.jpg` | Batch 1 contact sheet — all ten town scenes |
+| `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the gym battlefield, five portraits, two story beats |
 
 ---
 
-## Still to come (batches 2–4, ~22 assets)
+## Still to come (batches 3–4, ~14 assets)
 
 | Batch | Contents | Count |
 |---|---|---|
-| 2 | **`pewter-gym` battlefield — the one registered battle key with no art anywhere**, plus 7 portraits (`pewter-nurse`, `pewter-clerk`, `curator`, `gardener`, `pewter-guide`, `camper-liam`, `brock`) | 8 |
-| 3 | Story beats: arrival (`reach-pewter`), museum (`visit-museum`, `talk-curator`, `curator-twice`), the gym door guide, `beat-camper`, `beat-brock` and the Boulder Badge, the old man at the east exit, the hidden Poké Ball | 8 |
+| 3 | The two held portraits — `gardener`, `pewter-nurse` — plus 6 more story beats (`visit-museum`, `talk-curator`, `curator-twice`, `gym-guide-talk`, `beat-camper`, the old man at the east exit) and the hidden Poké Ball | 10 |
 | 4 | Area maps (city, south gate, east exit, museum quarter), region map, labelled reference | 6 |
 
 ---
