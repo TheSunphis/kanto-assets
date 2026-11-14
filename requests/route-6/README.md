@@ -2,7 +2,7 @@
 
 Route 6 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**30 of ~35 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
+**35 of 35 — route closed.** Batches 1–4: the road, its people, the story beats, both battlefields, the three route maps and both ringed region views. Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -156,13 +156,29 @@ Anchors for both: `(976, 380)` far — `(480, 640)` near, scale `1.0`, the same 
 underground field matters only if the tunnel becomes its own hunt area; the route field is the one that pays for
 itself today, because Route 6 is the first route since Route 4 with trainers standing on it.
 
----
+### Batch 4 — route maps (3) and region views (2)
 
-## Still to come
+Route 6 is short and mostly vertical: gate at the top, grass and water at the bottom, and a crowd of small
+structures in between that are hard to hold in your head from the scene pictures alone. Three maps fix that.
 
-| Batch | Contents | Count |
+| File | Shows | Weight |
 |---|---|---|
-| 4 | Route maps (3), both region views ringed, the labelled reference | 5 |
+| `routeinfo/route-6.jpg` | The whole route on one screen: the city wall and its gate at the top, the road running straight down between fenced lawns, both stair-houses above the middle, the two ledges on the right, the grass patch below them, the pond bottom-right and the port rooftops at the very bottom | 494 KB |
+| `routeinfo/route-6-north.jpg` | The northern half in detail: the gatehouse and its apron, the sunken brick stair on the left, the stone shelter on the right, the two ledges with their gap, the raised platform with its bench and bush | 520 KB |
+| `routeinfo/route-6-south.jpg` | The southern end: the tall grass with its leaning signpost and ditch, the pond with jetty, reeds and lily pads, the road bending east into a street of palms, tiled roofs and a strip of sea | 669 KB |
+
+Both region views are the whole Kanto landmass with **empty sea in the corners**, no captions of any kind, ringed
+in the house colours (8 px `(120,84,26)` inside 5 px `(247,201,72)`):
+
+| File | Shows | Ring | Weight |
+|---|---|---|---|
+| `region/kanto-route-6.jpg` | The illustrated region view; the ring sits on the road between the inland city and the coastal road | centre `1118,420`, radius 46 × 62 | 336 KB |
+| `region/kanto-map-route-6.jpg` | The flat schematic map; same road, one square of town at the junction | centre `1052,470`, radius 42 × 60 | 183 KB |
+
+The ring is small again, and honestly: Route 6 is a few hundred paces of road. It is *dense* paces — two tunnel
+mouths, a gate, two ledges, a pond and six trainers — but on a map of Kanto it is a dot. A labelled reference
+sheet, `_route-6-labeled-reference.jpg`, puts the five plus one story frame in a single view with the ring
+coordinates printed under each panel.
 
 ---
 
@@ -173,6 +189,7 @@ itself today, because Route 6 is the first route since Route 4 with trainers sta
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
 | `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
+| `review/_sheet-batch-4.jpg` | Batch 4 contact sheet — three route maps and both ringed region views |
 
 ---
 
@@ -242,3 +259,25 @@ Trainer("picnicker-isabelle", "Picnicker Isabelle", "Picnicker", "kanto-route-6"
 Prize money is the cartridge figure at the bot's one-quarter scale (₱192 → ₱48, ₱400 → ₱100, ₱320 → ₱80,
 ₱240 → ₱60). All six use the `kanto-route-6` field, which now has art behind it in
 `battle/bg/kanto-route-6.jpg`; the field key and the anchors it needs are in the batch 3 table above.
+
+---
+
+## Totals
+
+| Group | Count |
+|---|---|
+| Place scenes (`town/`) | 10 |
+| Portraits (`people/`) | 10 |
+| Story beats (`story/`) | 8 |
+| Battlefields (`battle/bg/`) | 2 |
+| Route maps (`routeinfo/`) | 3 |
+| Region views (`region/`) | 2 |
+| **Assets** | **35** |
+| Contact sheets (`review/`) | 4 |
+| Labelled reference | 1 |
+| This README | 1 |
+| **Files under `requests/route-6/`** | **41** |
+
+Route 6 is complete. The route that existed in the bot as one line of text — no buildings, no field key, no
+spawns — now has ten places to open, ten people to meet, six of them trainers with the cartridge's own teams,
+eight beats, two battlefields, and maps to look at. **Route closed.**
