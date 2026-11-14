@@ -1,5 +1,0 @@
-# Route 2 map attribution
-
-`kanto-route-2-map-art.png` is the image `Kanto_Route_2.png` published on the [Pokémon Fire Ash Wiki — Kanto Route 2](https://pokemonfireash.fandom.com/wiki/Kanto_Route_2). The source file was downloaded from [the wiki's Route 2 image](https://static.wikia.nocookie.net/pokemonfireash/images/8/8b/Kanto_Route_2.png/revision/latest?cb=20220530110337) and converted to PNG; the art itself is unaltered. Attribution: Pokémon Fire Ash Wiki contributors, “Kanto Route 2,” accessed 2026-11-11. The wiki identifies its community content as available under [CC BY-SA](https://www.fandom.com/licensing); this map adaptation retains that attribution and is shared under the same license terms.
-
-`kanto-route-2-map.png` overlays the Fire Ash route endpoints and documented notes on the source image. The six `kanto-route-2-map-{south,south-gate,forest,north-gate,north,cave}.png` files add bot position markers. The footer explicitly distinguishes the bot's retained shared Route 2/Viridian Forest encounter pool and separate Diglett's Cave destination from the Fire Ash Wiki's Route 2 encounter statement and source map.
