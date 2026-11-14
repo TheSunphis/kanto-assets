@@ -136,3 +136,44 @@ kanto_asset("town", "viridian-town-map.jpg")
 trainers in this town at all** — so the gym has no opponent yet and the battlefield above is
 future-proofing, not a present gap. The only battlefield key in the bot's data for this area is
 `kanto-route-2-and-viridian-forest`, which belongs to Route 2.
+
+---
+
+## Starter variants of the Rocket sequence
+
+The twelve legacy story frames in `assets/viridian-city/story/` were drawn for **one** starter: Pikachu.
+Eight of them carry him — `center`, `pedal`, `motorbike`, `jenny`, `misty`, `morning`, `oldman`, `phones` — so a
+trainer who picked Bulbasaur, Charmander or Squirtle watches a Pikachu being carried to the Center and driven off
+in a sidecar. These are the replacements, one frame per starter.
+
+Naming is `<legacy-frame>-<starter>.jpg` so a lookup can go straight from the frame it replaces plus the player's
+starter. Everything is **1376 × 768**, 64 colours, matching the frames they sit beside.
+
+### Batch 1 — the injury (3 of 3) ✅
+
+| File | Frame it replaces | Shows | Weight |
+|---|---|---|---|
+| `story/center-bulbasaur.jpg` | `center.jpg` | The Center lobby: the gurney, Nurse Joy, two Chansey, Ash anxious beside it, Jenny's bike parked at the right — and a bandaged Bulbasaur lying on the trolley | 505 KB |
+| `story/center-charmander.jpg` | `center.jpg` | The same, with Charmander on the gurney, bandaged on one arm, its tail flame burning low and weak | 620 KB |
+| `story/center-squirtle.jpg` | `center.jpg` | The same, with Squirtle on the gurney, a bandage taped across the rim of its shell | 628 KB |
+
+### Still to come — the escape (6)
+
+| Frame | Beat | State |
+|---|---|---|
+| `pedal-<starter>.jpg` | the bicycle escape through the wrecked Center, Misty in the foreground | **redrawing** — the starter came out too small in the basket to read as the subject |
+| `motorbike-<starter>.jpg` | Officer Jenny's motorbike and sidecar at dawn, Ash holding the starter | **redrawing** — same problem, the starter is indistinct in the sidecar |
+
+Both need the camera in closer and the starter held up at chest height rather than tucked in. The other five
+Pikachu frames — `jenny`, `misty`, `morning`, `oldman`, `phones` — are candidates for a third batch if the swap
+is wanted for those beats too.
+
+### Wiring
+
+The bot picks a story picture by filename, so the swap is one expression wherever the frame is used:
+
+```python
+picture = f"kanto/story/center-{starter_name.lower()}"   # bulbasaur / charmander / squirtle / pikachu
+```
+
+`center.jpg` stays as the Pikachu fallback, so nothing breaks for a player whose starter is Pikachu.
