@@ -149,31 +149,66 @@ in a sidecar. These are the replacements, one frame per starter.
 Naming is `<legacy-frame>-<starter>.jpg` so a lookup can go straight from the frame it replaces plus the player's
 starter. Everything is **1376 × 768**, 64 colours, matching the frames they sit beside.
 
-### Batch 1 — the injury (3 of 3) ✅
+### The three frames, nine images ✅
 
-| File | Frame it replaces | Shows | Weight |
-|---|---|---|---|
-| `story/center-bulbasaur.jpg` | `center.jpg` | The Center lobby: the gurney, Nurse Joy, two Chansey, Ash anxious beside it, Jenny's bike parked at the right — and a bandaged Bulbasaur lying on the trolley | 505 KB |
-| `story/center-charmander.jpg` | `center.jpg` | The same, with Charmander on the gurney, bandaged on one arm, its tail flame burning low and weak | 620 KB |
-| `story/center-squirtle.jpg` | `center.jpg` | The same, with Squirtle on the gurney, a bandage taped across the rim of its shell | 628 KB |
+All nine are in, night-lit where the beat is at night — which is every frame but the Center.
 
-### Still to come — the escape (6)
+**The injury — replaces `center.jpg`. Daytime Center interior, gurney, Nurse Joy, two Chansey, Ash beside it,
+Officer Jenny's bike parked at the right.**
 
-| Frame | Beat | State |
+| File | Starter | Weight |
 |---|---|---|
-| `pedal-<starter>.jpg` | the bicycle escape through the wrecked Center, Misty in the foreground | **redrawing** — the starter came out too small in the basket to read as the subject |
-| `motorbike-<starter>.jpg` | Officer Jenny's motorbike and sidecar at dawn, Ash holding the starter | **redrawing** — same problem, the starter is indistinct in the sidecar |
+| `story/center-bulbasaur.jpg` | bandaged over one shoulder, bulb on its back | 505 KB |
+| `story/center-charmander.jpg` | bandaged on one arm, tail flame burning low and weak | 620 KB |
+| `story/center-squirtle.jpg` | bandage taped across the rim of its shell | 628 KB |
 
-Both need the camera in closer and the starter held up at chest height rather than tucked in. The other five
-Pikachu frames — `jenny`, `misty`, `morning`, `oldman`, `phones` — are candidates for a third batch if the swap
-is wanted for those beats too.
+**The bicycle escape — replaces `pedal.jpg`. Night, the wrecked Center, smoke, Ash pedalling hard, Misty in
+the foreground.**
+
+| File | Starter | Weight |
+|---|---|---|
+| `story/pedal-bulbasaur.jpg` | in the wire front basket, bandaged, eyes wide | 448 KB |
+| `story/pedal-charmander.jpg` | perched on the handlebars, bandaged arm, flame lighting Ash's face | 462 KB |
+| `story/pedal-squirtle.jpg` | in the front basket, bandage across the shell rim | 465 KB |
+
+**Officer Jenny — replaces `motorbike.jpg`. Night, moon and street lamps, wet cobbles, the bike's headlamp on,
+Ash in the sidecar with the starter held against his chest.**
+
+| File | Starter | Weight |
+|---|---|---|
+| `story/motorbike-bulbasaur.jpg` | held up in the sidecar | 605 KB |
+| `story/motorbike-charmander.jpg` | held up, tail flame over Ash's arm | 572 KB |
+| `story/motorbike-squirtle.jpg` | held up, bandage across the shell rim | 546 KB |
+
+**A note on the light.** The first pass of the three `motorbike` frames was drawn at dawn with a pink and gold
+sky, because the legacy `motorbike.jpg` has a low warm sun in it. That is wrong for the beat: the Center is
+attacked at night and the bicycle escape is minutes later, so Jenny's pickup cannot happen at sunrise. All three
+are re-lit as night now — dark blue sky, moon, lamps lit along the avenue, headlamp beam and grit. The same pass
+also put the starter where it can be seen; the first attempt had it as a small indistinct shape in the basket
+and the sidecar, which defeats the point of the frame.
+
+If the legacy dawn look is wanted back for any reason, the original `motorbike.jpg` is untouched in
+`assets/viridian-city/story/`.
+
+### Still Pikachu-only — five frames
+
+| Frame | Why it still matters |
+|---|---|
+| `jenny.jpg` | Ash with Pikachu on his shoulder while Jenny points at a poster |
+| `misty.jpg` | Misty holding up the bicycle, Pikachu behind the counter |
+| `morning.jpg` | the hole blown in the Center wall, starter on Ash's shoulder |
+| `oldman.jpg` | the collapsed old man on the road, starter on Ash's shoulder |
+| `phones.jpg` | the call room, starter sitting on the bench beside him |
+
+Say the word and these get the same treatment.
 
 ### Wiring
 
 The bot picks a story picture by filename, so the swap is one expression wherever the frame is used:
 
 ```python
-picture = f"kanto/story/center-{starter_name.lower()}"   # bulbasaur / charmander / squirtle / pikachu
+picture = f"kanto/story/{frame}-{starter_name.lower()}"   # bulbasaur / charmander / squirtle
 ```
 
-`center.jpg` stays as the Pikachu fallback, so nothing breaks for a player whose starter is Pikachu.
+with the plain `center.jpg` / `pedal.jpg` / `motorbike.jpg` kept as the Pikachu fallback, so nothing breaks for a
+player whose starter is Pikachu.
