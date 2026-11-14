@@ -2,7 +2,7 @@
 
 Route 6 for PokéBot, in the **Pokémon Fire Ash** (GBA FireRed tileset) style.
 
-**20 of ~35 — batches 1–2: the road itself and the ten people on it.** Everything here is staged for review; nothing is installed.
+**30 of ~35 — batches 1–3: the road, its people, the story beats and both battlefields.** Everything here is staged for review; nothing is installed.
 
 ---
 
@@ -127,13 +127,41 @@ The four adults are drawn as adults — heavier build, set faces, grey in the gu
 stubble — so nobody has to guess whether a grown-up is standing in the gate. The six trainers are the ages their
 classes imply, and look it.
 
+### Batch 3 — story beats (8) and both battlefields
+
+Route 6's beats are all arrivals and obstructions: you come up out of a tunnel into the light, you squeeze through
+the gap in the ledges, you get jumped in the grass, you find the gate shut in your face. Each one carries people,
+because a beat with nobody in it is just another landscape.
+
+| File | Beat | Shows | Weight |
+|---|---|---|---|
+| `story/route-6-tunnel-out.jpg` | Out of the dark | A trainer climbs the last three steps out of the sunken stairwell, one hand shading their eyes, satchel swinging, the road running away south toward distant rooftops | 446 KB |
+| `story/route-6-berry-hill.jpg` | What the hill hides | A trainer crouched on the raised platform, one hand pulling a berry bush aside, the other steadying an open pouch — round red berries, a blank marker, a bench, the drop to the road behind | 416 KB |
+| `story/route-6-ledge-gap.jpg` | Through the gap | A trainer braced between the two stone ledges, one boot up on the rock, one hand on the lip, backpack straps held tight, looking down at the drop | 449 KB |
+| `story/route-6-grass-ambush.jpg` | The grass patch | Keigo up out of the tall grass with his net raised in both hands and his mouth open, a trainer in a red cap turning toward him, hand going to their belt | 593 KB |
+| `story/route-6-picnic.jpg` | Cloth by the pond | Two Picnickers on a check cloth — flask, enamel cups, sandwiches, a folded sun hat — reeds and the jetty behind, one laughing, one pouring | 571 KB |
+| `story/route-6-gate-locked.jpg` | Shut out | Night at the south gate: portcullis down and locked, a guard with a lantern and a palm-out hand, a trainer stopped on the wet paving, two lit windows high in the wall | 619 KB |
+| `story/route-6-lamp-down.jpg` | Ten lamps | The tunnel corridor by lamplight, an old lamp man on a stool reaching up with his brass pole as the flame catches, a trainer walking under him with one hand on the wall | 392 KB |
+| `story/route-6-pond-fisher.jpg` | Nothing biting | The fisherman on the end of the jetty, line tight and motionless, a trainer sitting behind him with chin in hand and plainly nothing to do | 434 KB |
+
+**Both battlefields.** Route 6 had no field key at all, so every fight on it fell back to bare `grass` — the
+generic field used by half of Kanto. These two fill that in, on the house anchors:
+
+| File | Field key | Shows | Weight |
+|---|---|---|---|
+| `battle/bg/kanto-route-6.jpg` | `kanto-route-6` *(new)* | Mown grass and pale paving in the foreground, a white post-and-rail fence across the middle with a clear gap, tall grass beyond it, round bushes and one flowering tree at the sides, the walled city's tower low on the horizon | 339 KB |
+| `battle/bg/kanto-route-6-underground.jpg` | `kanto-route-6-underground` *(new)* | Flagged stone floor, blue-grey glazed brick with a whitewashed band, two green-shaded bracket lamps with warm pools of light and hard shadow between them, a bench and bin pushed to the wall | 373 KB |
+
+Anchors for both: `(976, 380)` far — `(480, 640)` near, scale `1.0`, the same anchors Route 5 uses. The
+underground field matters only if the tunnel becomes its own hunt area; the route field is the one that pays for
+itself today, because Route 6 is the first route since Route 4 with trainers standing on it.
+
 ---
 
 ## Still to come
 
 | Batch | Contents | Count |
 |---|---|---|
-| 3 | Story beats (8) and both battlefields | 10 |
 | 4 | Route maps (3), both region views ringed, the labelled reference | 5 |
 
 ---
@@ -144,6 +172,7 @@ classes imply, and look it.
 |---|---|
 | `review/_sheet-batch-1.jpg` | Batch 1 contact sheet — the ten route scenes |
 | `review/_sheet-batch-2.jpg` | Batch 2 contact sheet — the ten portraits |
+| `review/_sheet-batch-3.jpg` | Batch 3 contact sheet — eight story beats and both battlefields |
 
 ---
 
@@ -211,5 +240,5 @@ Trainer("picnicker-isabelle", "Picnicker Isabelle", "Picnicker", "kanto-route-6"
 ```
 
 Prize money is the cartridge figure at the bot's one-quarter scale (₱192 → ₱48, ₱400 → ₱100, ₱320 → ₱80,
-₱240 → ₱60). All six use the `kanto-route-6` field, which does not exist yet: until batch 3 lands they fall back
-to bare `grass`.
+₱240 → ₱60). All six use the `kanto-route-6` field, which now has art behind it in
+`battle/bg/kanto-route-6.jpg`; the field key and the anchors it needs are in the batch 3 table above.
